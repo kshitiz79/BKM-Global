@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      domains: ['assets.aceternity.com'], // ← add this host
-    },
-  }
+  output: 'export',
+  trailingSlash: true, // This generates folders with index.html inside them
+  experimental: {
+    appDir: true,
+  },
+};
 
 export default nextConfig;
