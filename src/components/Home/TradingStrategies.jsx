@@ -141,7 +141,7 @@ export default function TradingStrategyCards() {
     <div className="bg-black py-16">
 
 
-        <h1 className="text-4xl text-center  text-white mb-8  uppercase">
+        <h1 className="md:text-4xl text-2xl text-center  text-white mb-8  uppercase">
           Trading Strategies
         </h1>
        

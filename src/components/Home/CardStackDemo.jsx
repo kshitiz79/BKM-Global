@@ -3,10 +3,10 @@ import { CardStack } from "./../../ui/card-stack";
 import { cn } from "./../../lib/utils";
 export function CardStackDemo() {
   return (
-<div className="py-12 bg-black">
-    <div className="justify-center text-center text-4xl uppercase text-white py-6">Testimonials</div>
+<div className="py-10 md:py-12  bg-black ">
+    <div className="justify-center text-center md:text-4xl uppercase text-white text-2xl py-6">Testimonials</div>
 
-    <div className="h-auto flex flex-col sm:flex-row items-center justify-center w-full gap-32 md:gap-7 mt-10 ">
+    <div className="h-auto flex flex-col sm:flex-row items-center justify-center w-full gap-32 md:gap-7 mt-10  mb-24">
 
 
       <CardStack items={CARDS} flipDelay={2500} />

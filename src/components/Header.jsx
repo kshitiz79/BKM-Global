@@ -1,8 +1,93 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./../ui/nav-menu";
-import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
+
+const transition = {
+  type: "spring",
+  mass: 0.5,
+  damping: 11.5,
+  stiffness: 100,
+  restDelta: 0.001,
+  restSpeed: 0.001,
+};
+
+export const MenuItem = ({ setActive, active, item, children }) => {
+  return (
+    <div onMouseEnter={() => setActive(item)} className="relative ">
+      <motion.p
+        transition={{ duration: 0.3 }}
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white">
+        {item}
+      </motion.p>
+      {active !== null && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={transition}>
+          {active === item && (
+            <div
+              className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+              <motion.div
+                transition={transition}
+                layoutId="active"
+                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.1] shadow-xl">
+                <motion.div
+                  layout
+                  className="w-[30rem] h-80 p-4">
+                  {children}
+                </motion.div>
+              </motion.div>
+            </div>
+          )}
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+export const Menu = ({ setActive, children }) => {
+  return (
+    <nav
+      onMouseLeave={() => setActive(null)}
+      className="relative uppercase rounded-full border border-transparent dark:bg-black bg-white shadow-input flex justify-center space-x-8 px-8 py-6">
+      {children}
+    </nav>
+  );
+};
+
+export const ProductItem = ({ title, description, href, src }) => {
+  return (
+    <Link href={href} className="flex items-start space-x-3 normal-case">
+      <Image
+        src={src}
+        width={50}
+        height={50}
+        alt={title}
+        className="shrink-0 rounded-md shadow-2xl"
+      />
+      <div>
+        <h4 className="text-lg font-bold mb-1 text-black dark:text-white">
+          {title}
+        </h4>
+        <p className="text-neutral-700 text-sm dark:text-neutral-300">
+          {description}
+        </p>
+      </div>
+    </Link>
+  );
+};
+
+export const HoveredLink = ({ children, ...rest }) => {
+  return (
+    <Link
+      {...rest}
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black ">
+      {children}
+    </Link>
+  );
+};
 
 export function Header() {
   return (
@@ -14,69 +99,137 @@ export function Header() {
 
 function Navbar({ className }) {
   const [active, setActive] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <div
-      className={cn(
-        "fixed top-10 inset-x-0 w-full mx-auto z-50 shadow rounded-3xl  dark:bg-black dark:border-white/[0.2] bg-white ",
-        className
-      )}
+      className={`fixed  inset-x-0 w-full mx-auto z-50 shadow rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
     >
-      <div className="flex items-center justify-between px-24">
-
-      <div className="logo">
+      <div className="flex items-center justify-between px-6 sm:px-8 lg:px-24">
+        <div className="logo">
           <img src="/logo.png" alt="Logo" className="h-20 ml-8 w-auto" />
         </div>
 
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex">
+          <Menu setActive={setActive}>
+            <Link href="/" passHref>
+              <MenuItem item="Home" />
+            </Link>
 
-        <div>
-        <Menu setActive={setActive}>
+            <Link href="/about-page" passHref>
+              <MenuItem item="About" />
+            </Link>
 
-        <Link href="/" passHref>
-    <MenuItem item="Home" />
-  </Link>
+            <MenuItem setActive={setActive} active={active} item="Services">
+              <div className="text-sm grid grid-cols-2 gap-4 p-4">
+                <ProductItem
+                  title="Algochurn"
+                  href="https://algochurn.com"
+                  src="https://assets.aceternity.com/demos/algochurn.webp"
+                  description="Prepare for tech interviews like never before."
+                />
+                <ProductItem
+                  title="Tailwind Master Kit"
+                  href="https://tailwindmasterkit.com"
+                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                  description="Production ready Tailwind css components for your next project"
+                />
+                <ProductItem
+                  title="Moonbeam"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Rogue"
+                  href="https://userogue.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                />
+              </div>
+            </MenuItem>
 
-          
-  <Link href="/about-page" passHref>
-    <MenuItem item="About" />
-  </Link>
-          <MenuItem setActive={setActive} active={active} item="Services">
-  {/* 2-column grid with gap for spacing */}
-  <div className="text-sm grid grid-cols-2 gap-4 p-4">
-    <ProductItem
-      title="Algochurn"
-      href="https://algochurn.com"
-      src="https://assets.aceternity.com/demos/algochurn.webp"
-      description="Prepare for tech interviews like never before."
-    />
-    <ProductItem
-      title="Tailwind Master Kit"
-      href="https://tailwindmasterkit.com"
-      src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-      description="Production ready Tailwind css components for your next project"
-    />
-    <ProductItem
-      title="Moonbeam"
-      href="https://gomoonbeam.com"
-      src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-      description="Never write from scratch again. Go from idea to blog in minutes."
-    />
-    <ProductItem
-      title="Rogue"
-      href="https://userogue.com"
-      src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-      description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-    />
-  </div>
-</MenuItem>
+            <MenuItem item="Blog" />
+          </Menu>
+        </div>
 
-
-          <MenuItem item="Blog">
-           
-          </MenuItem>
-        </Menu>
-        {/* Logo placed on the right */}
+        {/* Mobile Menu */}
+        <div className="lg:hidden flex items-center">
+          <button
+            className="text-black dark:text-white"
+            onClick={toggleMenu}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white dark:bg-black p-6 space-y-4">
+          <Link href="/" passHref>
+            <MenuItem item="Home" />
+          </Link>
+          <Link href="/about-page" passHref>
+            <MenuItem item="About" />
+          </Link>
+          <MenuItem item="Services">
+            <div className="text-sm space-y-4">
+              <ProductItem
+                title="Algochurn"
+                href="https://algochurn.com"
+                src="https://assets.aceternity.com/demos/algochurn.webp"
+                description="Prepare for tech interviews like never before."
+              />
+              <ProductItem
+                title="Tailwind Master Kit"
+                href="https://tailwindmasterkit.com"
+                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                description="Production ready Tailwind css components for your next project"
+              />
+              <ProductItem
+                title="Moonbeam"
+                href="https://gomoonbeam.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                description="Never write from scratch again. Go from idea to blog in minutes."
+              />
+              <ProductItem
+                title="Rogue"
+                href="https://userogue.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              />
+            </div>
+          </MenuItem>
+
+          <MenuItem item="Blog" />
+        </div>
+      )}
     </div>
   );
 }
