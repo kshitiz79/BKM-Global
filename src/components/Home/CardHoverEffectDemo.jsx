@@ -1,47 +1,52 @@
+
+"use client";
 import { HoverEffect } from "./../../ui/card-hover-effect";
 
 export function CardHoverEffectDemo() {
   return (
+    <div className="bg-black">
     <div className="max-w-7xl mx-auto px-4">
       <HoverEffect items={projects} />
+    </div>
+
     </div>
   );
 }
 export const projects = [
   {
-    title: "Stripe",
+    title: "Fund Management",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+      "Fund Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
+    link: "",
   },
   {
-    title: "Netflix",
+    title: "Trading Signals",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "we specialize in delivering precise trading signals that empower investors to make informed decisions and optimize their portfolios for success..",
+    link: "",
   },
   {
-    title: "Google",
+    title: "Uplearn",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+      "we believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
+    link: "",
   },
   {
-    title: "Meta",
+    title: "Fund Management",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Fund Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
+    link: "",
   },
   {
-    title: "Amazon",
+    title: "Trading Signals",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+      "we specialize in delivering precise trading signals that empower investors to make informed decisions and optimize their portfolios for success..",
+    link: "",
   },
   {
-    title: "Microsoft",
+    title: "Uplearn",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+      "we believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
+    link: "",
   },
 ];

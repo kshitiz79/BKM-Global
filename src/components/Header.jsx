@@ -17,11 +17,11 @@ function Navbar({ className }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-7xl mx-auto z-50 shadow rounded-3xl  dark:bg-black dark:border-white/[0.2] bg-white ",
+        "fixed top-10 inset-x-0 w-full mx-auto z-50 shadow rounded-3xl  dark:bg-black dark:border-white/[0.2] bg-white ",
         className
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-24">
 
       <div className="logo">
           <img src="/logo.png" alt="Logo" className="h-20 ml-8 w-auto" />
@@ -70,7 +70,7 @@ function Navbar({ className }) {
 </MenuItem>
 
 
-          <MenuItem item="Blogs">
+          <MenuItem item="Blog">
            
           </MenuItem>
         </Menu>

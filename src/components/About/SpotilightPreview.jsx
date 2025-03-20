@@ -8,7 +8,7 @@ import { Spotlight } from "./../../ui/Spotlight";
 export function SpotlightPreview() {
   return (
     <div
-      className="relative flex h-[40rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
+      className="relative flex py-20 w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",

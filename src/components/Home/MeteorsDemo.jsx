@@ -23,7 +23,8 @@ const cards = [
 
 export function MeteorsDemo() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="bg-black">
+    <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 bg-black">
       {cards.map(card => (
         <div key={card.id} className="relative w-full">
           <div className="absolute inset-0 scale-[0.80] transform rounded-full blur-xl" />
@@ -34,6 +35,7 @@ export function MeteorsDemo() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }

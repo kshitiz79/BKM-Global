@@ -1,23 +1,24 @@
 "use client";
 import { useEffect, useRef } from 'react';
-import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss';
 
 const ScrollLayout = ({ children }) => {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-
     if (!scrollRef.current) return;
 
-    const locoScroll = new LocomotiveScroll({
+    // Dynamically import locomotive-scroll only on the client side
+    import('locomotive-scroll').then((module) => {
+      const LocomotiveScroll = module.default;
+      const locoScroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
- 
-    });
+      });
 
-    // Clean up on unmount
-    return () => locoScroll.destroy();
+      // Clean up on unmount
+      return () => locoScroll.destroy();
+    });
   }, []);
 
   return (

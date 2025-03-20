@@ -1,45 +1,123 @@
-import React from "react";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+"use client";
+
+import Link from 'next/link';
+import { useEffect, useState } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FiMapPin, FiMail, FiPhone } from 'react-icons/fi'; // Importing icons
 
 export default function Footer() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensures this runs only on the client side
+  }, []);
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Branding + About */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-white">BKM Global</h2>
-          <p className="text-sm">
-            Empowering traders worldwide with cutting‑edge strategies, transparent management, and a community built for growth.
-          </p>
-        </div>
+    <footer className="relative bg-white text-gray-900">
+      {/* Background GIF (Only rendered on client to avoid SSR mismatch) */}
+  
 
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#services" className="hover:text-white">Services</a></li>
-            <li><a href="#about" className="hover:text-white">About Us</a></li>
-            <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
-            <li><a href="#contact" className="hover:text-white">Contact</a></li>
-          </ul>
+      {/* Top section: Social networks */}
+      <div className="relative border-b border-gray-200 py-4 flex flex-col md:flex-row justify-between items-center lg:px-16 z-10 text-center">
+        <div className="mb-2 md:mb-0">
+          Get connected with us on social networks:
         </div>
-
-        {/* Social + Contact */}
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-white">Connect</h3>
-          <div className="flex space-x-4 text-2xl">
-            <a href="#" aria-label="Twitter"><FaTwitter className="hover:text-white"/></a>
-            <a href="#" aria-label="LinkedIn"><FaLinkedin className="hover:text-white"/></a>
-            <a href="#" aria-label="GitHub"><FaGithub className="hover:text-white"/></a>
-          </div>
-          <p className="text-sm">
-            Email us: <a href="mailto:support@bkmglobal.com" className="hover:text-white">support@bkmglobal.com</a>
-          </p>
+        <div className="flex space-x-4">
+          <Link href="https://www.facebook.com/people/BKM-Global/61561378508716/" aria-label="Facebook">
+            <FaFacebookF className="text-xl hover:text-gray-900 transition-colors" />
+          </Link>
+          <Link href="https://www.instagram.com/bkmglobal24/" aria-label="Instagram">
+            <FaInstagram className="text-xl hover:text-gray-900 transition-colors" />
+          </Link>
+          <Link href="*" aria-label="LinkedIn">
+            <FaLinkedinIn className="text-xl hover:text-gray-900 transition-colors" />
+          </Link>
         </div>
       </div>
 
-      <div className="border-t border-gray-800 mt-8 pt-6 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} BKM Global. All rights reserved.
+      {/* Main footer section */}
+      <div className="relative mx-auto py-10 px-6 md:px-12 lg:px-16 border-b border-gray-100 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+          {/* Company Logo */}
+          <div className="text-center lg:text-left">
+            <img src="/logo.png" alt="logo" className="w-48 mx-auto lg:mx-0" />
+          </div>
+
+          {/* Products */}
+          <div className="text-center lg:text-left">
+            <h6 className="uppercase font-semibold mb-4">Pages</h6>
+            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
+           HOME
+            </p>
+            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
+            Service
+            </p>
+            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
+             Blog
+            </p>
+            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
+              Contact
+            </p>
+          </div>
+
+          {/* Useful Links */}
+          <div className="text-center lg:text-left ">
+            <h6 className="uppercase font-semibold mb-4">Services</h6>
+            <p className="mb-4">
+              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
+             Day Trading
+              </Link>
+            </p>
+            <p className="mb-4">
+              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
+                Swing Trading
+              </Link>
+            </p>
+            <p className="mb-4">
+              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
+                Position Trading
+              </Link>
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div className="text-center lg:text-left text-black">
+            <h6 className="uppercase font-semibold mb-4">Contact</h6>
+            <div className="flex flex-col items-center lg:items-start">
+              <div className='flex items-center mb-4'>
+                <FiMapPin className="mr-2" size={18} />
+                <p>
+                No - 408,Cita Building, 1st floor,1st C Main ,
+                Koramangala 7th Block Bangalore- 560 095 Karnataka, India.
+                </p>
+              </div>
+              <div className="flex items-center mb-4">
+                <FiMail className="mr-2" size={18} />
+                <p>info@bkmglobal.in</p>
+              </div>
+              <div className="flex items-center mb-4">
+                <FiPhone className="mr-2" size={18} />
+                <p>++91 8431891335</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="relative bg-gray-950 text-center py-4 z-10 flex flex-col md:flex-row justify-between items-center px-6 text-xs md:text-sm">
+        <p className="text-gray-300 mb-2 md:mb-0">
+          Powered by{" "}
+          <Link href="https://rbshstudio.com" className="text-gray-400 font-semibold">
+            RBSH Studio
+          </Link>
+        </p>
+        <p className="text-gray-300">
+          © 2025 Copyright:{" "}
+          <Link href="/" className="text-gray-400 font-semibold ml-1">
+            BKM GLOBAL
+          </Link>
+        </p>
       </div>
     </footer>
   );

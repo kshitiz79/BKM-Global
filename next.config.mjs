@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true, // This generates folders with index.html inside them
-  experimental: {
-    appDir: true,
+  images: {
+    unoptimized: true, // Disable the default image optimization
   },
 };
 

@@ -1,4 +1,4 @@
-
+"use client";
 
 import Services from '@/components/About/AboutMain'
 import Banner from '@/components/About/Banner'

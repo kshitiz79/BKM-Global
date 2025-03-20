@@ -1,3 +1,4 @@
+"use client";
 import Banner from "@/components/Home/Banner";
 import { CardHoverEffectDemo } from "@/components/Home/CardHoverEffectDemo";
 import { CardStackDemo } from "@/components/Home/CardStackDemo";
@@ -6,6 +7,9 @@ import { ShootingStarsAndStarsBackgroundDemo } from "@/components/Home/ShootingS
 import WhyToChooseUs from "./../components/Home/WhyToChooseUs";
 import Forex from "@/components/Home/Forex";
 import TradingStrategyCards from "@/components/Home/TradingStrategies";
+import MarqueeCards from "@/components/Home/MarqueeCards";
+import { FloatingDockDemo } from "@/components/FloatingDockDemo";
+
 
 export default function Home() {
   return (
@@ -15,9 +19,12 @@ export default function Home() {
    <ShootingStarsAndStarsBackgroundDemo/>
 <CardHoverEffectDemo/>
 <Forex/>
+<MarqueeCards/>
 <WhyToChooseUs/>
+
 <TradingStrategyCards/>
 <CardStackDemo/>
+
    </div>
   );
 }

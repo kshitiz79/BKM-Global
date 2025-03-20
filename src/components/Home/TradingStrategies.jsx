@@ -138,13 +138,16 @@ export default function TradingStrategyCards() {
   return (
 
     <>
-    <div>
-        <h1 className="text-4xl text-center  text-white mb-8 mt-16 uppercase">
+    <div className="bg-black py-16">
+
+
+        <h1 className="text-4xl text-center  text-white mb-8  uppercase">
           Trading Strategies
         </h1>
        
   
-    </div>
+
+    <div className="bg-black">
     <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto gap-6 p-4 ">
       {strategies.map((strategy) => (
         <div
@@ -160,6 +163,8 @@ export default function TradingStrategyCards() {
           </div>
         </div>
       ))}
+    </div>
+    </div>
     </div>
     </>
   );

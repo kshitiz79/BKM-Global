@@ -3,10 +3,10 @@ import { CardStack } from "./../../ui/card-stack";
 import { cn } from "./../../lib/utils";
 export function CardStackDemo() {
   return (
-<div className="py-20">
-    <div className="justify-center text-center text-4xl uppercase">Testimonials</div>
+<div className="py-12 bg-black">
+    <div className="justify-center text-center text-4xl uppercase text-white py-6">Testimonials</div>
 
-    <div className="h-auto flex items-center justify-center w-full gap-7 mt-10">
+    <div className="h-auto flex flex-col sm:flex-row items-center justify-center w-full gap-32 md:gap-7 mt-10 ">
 
 
       <CardStack items={CARDS} flipDelay={2500} />
@@ -26,7 +26,7 @@ export const Highlight = ({
   return (
     <span
       className={cn(
-        "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
+        "font-bold  text-emerald-500 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
         className
       )}>
       {children}
