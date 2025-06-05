@@ -1,167 +1,170 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
+import Image from 'next/image'; // Assuming Next.js for image optimization
+import { motion } from 'framer-motion'; // For animations
 
-const page = () => {
-  const [activeTab, setActiveTab] = useState('login');
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Contact Form Data:', formData);
+    alert('Thank you for reaching out! We will get back to you soon.');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  // Animation variants for cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4">
-      {/* Main Content */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl">
-        {/* Left Section - Image */}
-        <div className="md:w-1/2 w-full mb-6 md:mb-0">
-          <img
-            src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-            alt="Man on stairs"
-            className="rounded-lg shadow-lg w-full h-auto"
-          />
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center p-4">
+      <h1 className="text-4xl font-bold text-white mb-8">Get in Touch</h1>
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-6">
+        {/* Left Section - Image Card */}
+      <motion.div
+            className="bg-gray-800 rounded-xl shadow-2xl p-6 text-white"
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+          >
+            <h3 className="text-lg font-semibold mb-4">Contact Information</h3>
+            <div className="text-sm text-gray-400 space-y-4">
+              <p>
+                <span className="font-semibold text-white">Address:</span><br />
+                408, Cita Building, 1st floor, 1st C Main,<br />
+                Koramangala 7th Block, Bangalore-560 095,<br />
+                Karnataka, India.
+              </p>
+              <p>
+                <span className="font-semibold text-white">Email:</span>{' '}
+                <a href="mailto:info@bkmglobal.in" className="text-green-500 hover:underline">
+                  info@bkmglobal.in
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-white">Phone:</span>{' '}
+                <a href="tel:+918431891335" className="text-green-500 hover:underline">
+                  +91 8431891335
+                </a>
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Right Section - Form */}
-        <div className="md:w-1/2 w-full flex justify-center">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md text-white">
-            <h2 className="text-2xl font-bold mb-4">Welcome</h2>
+        
+
+        {/* Right Section - Form and Details Cards */}
+        <div className="md:w-1/2 w-full flex flex-col gap-6">
+          {/* Contact Form Card */}
+          <motion.div
+            className="bg-gray-800 rounded-xl shadow-2xl p-6 text-white"
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
+            <h2 className="text-2xl font-bold mb-4">Send Us a Message</h2>
             <p className="text-sm text-gray-400 mb-6">
-              Access your account or create a new one to get started.
+              Fill out the form below, and we’ll respond as soon as possible.
             </p>
 
-            {/* Tabs */}
-            <div className="flex mb-6">
-              <button
-                onClick={() => setActiveTab('login')}
-                className={`w-1/2 py-2 text-center text-sm font-semibold ${
-                  activeTab === 'login'
-                    ? 'border-b-2 border-green-500 text-white'
-                    : 'text-gray-400'
-                }`}
-              >
-                Login
-              </button>
-              <button
-                onClick={() => setActiveTab('signup')}
-                className={`w-1/2 py-2 text-center text-sm font-semibold ${
-                  activeTab === 'signup'
-                    ? 'border-b-2 border-green-500 text-white'
-                    : 'text-gray-400'
-                }`}
-              >
-                Signup
-              </button>
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm mb-1">
+                  Full Name <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="e.g. Don Joe"
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  required
+                />
+              </div>
 
-            {/* Form */}
-            {activeTab === 'login' ? (
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm mb-1">
-                    Email address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="name@example.com"
-                    className="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
+              <div>
+                <label className="block text-sm mb-1">
+                  Email Address <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="name@example.com"
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  required
+                />
+              </div>
 
-                <div>
-                  <label className="block text-sm mb-1">
-                    Password <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="••••••••"
-                    className="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition-colors"
-                >
-                  login
-                </button>
-
-                <p className="text-xs text-gray-400 mt-4 text-center">
-                  Forgot your password?{' '}
-                  <a href="#" className="text-green-500 hover:underline">
-                    Reset it
-                  </a>
-                </p>
-              </form>
-            ) : (
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm mb-1">
-                    Full Name <span className="text-red-500">*</span
-                    >
-                  </label>
+              <div>
+                <label className="block text-sm mb-1">
+                  Phone Number <span className="text-red-500">*</span>
+                </label>
+                <div className="flex">
+                  <span className="inline-flex items-center px-3 rounded-l-md bg-gray-700 border border-r-0 border-gray-600 text-gray-400">
+                    🇮🇳
+                  </span>
                   <input
                     type="text"
-                    placeholder="e.g Don Joe"
-                    className="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="0587685575"
+                    className="w-full p-3 rounded-r-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                    required
                   />
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-sm mb-1">
-                    Email address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="name@example.com"
-                    className="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
+              <div>
+                <label className="block text-sm mb-1">
+                  Message <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message..."
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  rows="4"
+                  required
+                />
+              </div>
 
-                <div>
-                  <label className="block text-sm mb-1">
-                    Phone number <span className="text-red-500">*</span>
-                  </label>
-                  <div className="flex">
-                    <span className="inline-flex items-center px-3 rounded-l-md bg-gray-700 border border-r-0 border-gray-600 text-gray-400">
-                      🇮🇳
-                    </span>
-                    <input
-                      type="text"
-                      placeholder="0587685575"
-                      className="w-full p-2 rounded-r-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                  </div>
-                </div>
+              <button
+                type="submit"
+                className="w-full bg-green-500 text-white p-3 rounded-md hover:bg-green-600 transition-colors transform hover:scale-105"
+              >
+                Send Message
+              </button>
+            </form>
+          </motion.div>
 
-                <div>
-                  <label className="block text-sm mb-1">
-                    Password <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="••••••••"
-                    className="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition-colors"
-                >
-                  signup
-                </button>
-
-                <p className="text-xs text-gray-400 mt-4 text-center">
-                  By signing up, you agree to our{' '}
-                  <a href="#" className="text-green-500 hover:underline">
-                    Terms & Conditions
-                  </a>
-                </p>
-              </form>
-            )}
-          </div>
+          {/* Contact Details Card */}
+         
         </div>
       </div>
-
-  
     </div>
   );
 };
 
-export default page;
+export default ContactUs;
