@@ -149,6 +149,17 @@ function Navbar({ className }) {
             </MenuItem>
 
             <MenuItem item="Blog" />
+
+            <Link href="/privacy-policy" passHref>
+              <MenuItem item="Privacy Policy" />
+            </Link>
+
+            <Link href="/contact-us" passHref>
+              <MenuItem item="Contact Us" />
+            </Link>
+
+
+            
           </Menu>
         </div>
 
