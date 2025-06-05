@@ -105,7 +105,7 @@ function Navbar({ className }) {
 
   return (
     <div
-      className={`fixed  inset-x-0 w-full mx-auto z-50 shadow rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
+      className={`fixed  inset-x-0 w-full mx-auto z-50 shadow  dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
     >
       <div className="flex items-center justify-between px-6 sm:px-8 lg:px-24">
         <div className="logo">

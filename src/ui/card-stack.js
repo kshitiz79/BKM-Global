@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export const CardStack = ({
   items,
-  offset = 10,
+  offset = 10,                      
   scaleFactor = 0.06,
   flipDelay = 0,
 }) => {
@@ -12,7 +12,7 @@ export const CardStack = ({
   const intervalRef = useRef(null);
   const timeoutRef = useRef(null);
 
-  useEffect(() => {
+  useEffect(() => { 
     timeoutRef.current = setTimeout(() => {
       intervalRef.current = setInterval(() => {
         setCards(prev => {
@@ -42,7 +42,7 @@ export const CardStack = ({
             zIndex: cards.length - i,
           }}
         >
-          <div className="font-normal text-neutral-700 dark:text-neutral-200">
+          <div className="font-normal text-neutral-100 dark:text-neutral-200">
             {card.content}
           </div>
           <div>
