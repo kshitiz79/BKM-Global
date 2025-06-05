@@ -47,7 +47,7 @@ export default function Footer() {
           <div className="text-center lg:text-left">
             <h6 className="uppercase font-semibold mb-4">Pages</h6>
             <p className="mb-4 text-black hover:text-gray-800 transition-colors">
-           HOME
+           Home
             </p>
             <p className="mb-4 text-black hover:text-gray-800 transition-colors">
             Service
@@ -85,7 +85,7 @@ export default function Footer() {
             <h6 className="uppercase font-semibold mb-4">Contact</h6>
             <div className="flex flex-col items-center lg:items-start">
               <div className='flex items-center mb-4'>
-                <FiMapPin className="mr-2" size={18} />
+                <FiMapPin className="mr-2" size={24} />
                 <p>
                 No - 408,Cita Building, 1st floor,1st C Main ,
                 Koramangala 7th Block Bangalore- 560 095 Karnataka, India.

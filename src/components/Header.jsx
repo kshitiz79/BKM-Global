@@ -51,7 +51,7 @@ export const Menu = ({ setActive, children }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative uppercase rounded-full border border-transparent dark:bg-black bg-white shadow-input flex justify-center space-x-8 px-8 py-6">
+      className="relative uppercase rounded-full border border-transparent dark:bg-black bg-white shadow-input flex justify-center space-x-8 px-8 py-8">
       {children}
     </nav>
   );
@@ -123,32 +123,28 @@ function Navbar({ className }) {
               <MenuItem item="About" />
             </Link>
 
+
             <MenuItem setActive={setActive} active={active} item="Services">
               <div className="text-sm grid grid-cols-2 gap-4 p-4">
                 <ProductItem
-                  title="Algochurn"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
+                  title="Fund Management"
+                  href="/services-page/fund-management"
+                  src="/fund-mang.png"
+                  description="Comprehensive Asset Management Solutions"
                 />
                 <ProductItem
-                  title="Tailwind Master Kit"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
+                  title="Trading Signals"
+                  href="/services-page/trading-signals"
+                  src="/trading-signals.png"
+                  description="Comprehensive Trading Signals for Strategic Investment"
                 />
                 <ProductItem
-                  title="Moonbeam"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
+                  title="Uplearn"
+                  href="/services-page/uplearn"
+                  src="/uplearn.png"
+                  description=" Redefining Your Approach to Trading and Investment."
                 />
-                <ProductItem
-                  title="Rogue"
-                  href="https://userogue.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                />
+              
               </div>
             </MenuItem>
 
