@@ -9,12 +9,12 @@ const serviceData = [
     icon: "💹"
   },
   {
-    title: "Fund Management",
+    title: "Investment Management",
     description: "Personalized investment strategies tailored to your risk tolerance and financial objectives, helping you achieve your long-term financial goals.",
     icon: "📊"
   },
   {
-    title: "Trading Signals",
+    title: "Market Alert",
     description: "Real-time signals and insights to help you make informed trading decisions and capitalize on market opportunities.",
     icon: "📈"
   }

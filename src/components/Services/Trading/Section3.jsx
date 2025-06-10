@@ -14,7 +14,7 @@ export default function Section3() {
           {/* <TbChartCandle /> */}
           </div>
           <h2 className="text-2xl font-semibold mb-4 ">Technical Indicators</h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-300 text-justify">
           Popular technical indicators frequently utilized in trading strategies encompass Moving Averages (MA), Relative Strength Index (RSI), and Moving Average Convergence Divergence (MACD). These indicators serve as tools to analyze market trends and conditions, aiding traders in identifying potential entry and exit points based on historical price and volume data.
           </p>
         </div>
@@ -25,7 +25,7 @@ export default function Section3() {
             {/* <FaMoneyBillWave /> */}
           </div>
           <h2 className="text-2xl font-semibold mb-4">Algorithmic Signals</h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-300 text-justify">
           Algorithmic signals leverage advanced mathematical models and algorithms to analyze large datasets swiftly. These models can identify complex patterns and anomalies that human analysts might overlook, providing timely trading opportunities. Machine learning algorithms continually adapt and improve based on new data, enhancing the accuracy and reliability of algorithmic signals over time.
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Section3() {
             {/* <FaRegSmile /> */}
           </div>
           <h2 className="text-2xl font-semibold mb-4">Fundamental Analysis Signals</h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-300 text-justify">
           Fundamental analysis signals are based on evaluating an asset's intrinsic value using economic and financial data. This includes analyzing company financial statements, industry trends, economic indicators, and geopolitical factors. Fundamental signals provide insights into the broader economic landscape and long-term investment potential, helping investors make informed decisions based on underlying value rather than short-term market fluctuations.
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function Section3() {
 
       {/* WhatsApp Floating Icon */}
       <a
-        href="https://wa.me/your-number"
+        href="https://wa.me/9740633154"
         className="fixed bottom-6 right-6 bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-105 transition"
         target="_blank"
         rel="noopener noreferrer"

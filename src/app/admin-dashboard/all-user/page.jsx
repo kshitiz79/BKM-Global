@@ -44,7 +44,7 @@ const AllUsers = () => {
       {/* Header Section */}
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold text-blue-800">All Users</h2>
-        
+
       </div>
 
       {/* Table Section */}

@@ -12,7 +12,7 @@ export default function Section1() {
   ];
 
   return (
-    <section className="bg-black py-12 space-y-10">
+    <section className="bg-black py-12 space-y-10 text-justify ">
         {/* <h1 className="text-white text-4xl text-center uppercase text-bold">The Importance of Fund Management</h1> */}
       {fundData.map((item, index) => (
         <section
@@ -38,7 +38,7 @@ export default function Section1() {
             {/* Text - conditionally ordered */}
             <div className={`${index % 2 !== 0 ? "md:order-1" : ""}`}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{item.title}</h2>
-              <p className="text-lg leading-relaxed text-gray-200">{item.description}</p>
+              <p className="text-lg leading-relaxed text-gray-200 text-justify">{item.description}</p>
             </div>
           </div>
         </section>

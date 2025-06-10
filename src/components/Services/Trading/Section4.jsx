@@ -26,7 +26,7 @@ const Section4 = () => {
               />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Streamlined Decision-Making</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-justify">
               By providing clear, data-driven insights into market trends and opportunities, trading signals streamline decision-making processes. Investors can quickly assess market conditions and make informed decisions on when to buy, sell, or hold securities, reducing the emotional aspect of trading.
             </p>
           </div>
@@ -43,7 +43,7 @@ const Section4 = () => {
               />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Time Efficiency</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-justify">
               Automating market analysis through trading signals saves investors valuable time. Instead of manually analyzing vast amounts of market data, investors can rely on signals to highlight potential opportunities and risks, allowing them to focus on strategy implementation and portfolio management.
             </p>
           </div>
@@ -60,7 +60,7 @@ const Section4 = () => {
               />
             </div>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Enhanced Portfolio Management</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-justify">
               Trading signals play a crucial role in portfolio management by optimizing asset allocations and introducing new opportunities. By diversifying signal sources and aligning signals with specific investment goals and risk tolerances, investors can effectively manage portfolio performance and reduce overall investment risk.
             </p>
           </div>

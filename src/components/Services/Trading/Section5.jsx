@@ -18,7 +18,7 @@ const Section5 = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl font-semibold text-white mb-4">Cutting-Edge Technology</h2>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify">
                 We leverage state-of-the-art technology, including artificial intelligence (AI) and machine learning algorithms, to process and interpret vast amounts of market data in real-time. These technologies identify patterns, trends, and anomalies that signal potential trading opportunities, ensuring our signals are accurate and timely.
               </p>
             </div>
@@ -47,7 +47,7 @@ const Section5 = () => {
                 />
               </div>
               <h2 className="text-2xl font-semibold text-white mb-4">Expert Analysis</h2>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify ">
                 Our team of experienced analysts provides qualitative insights and context to quantitative data analysis. By integrating technical expertise with market insights, we enhance the reliability and relevance of our trading signals. This human element ensures that our signals not only reflect market conditions but also consider broader economic factors and geopolitical events that impact market dynamics.
               </p>
             </div>
@@ -64,7 +64,7 @@ const Section5 = () => {
                 />
               </div>
               <h2 className="text-2xl font-semibold text-white mb-4">Continuous Improvement</h2>
-              <p className="text-gray-300">
+              <p className="text-gray-300 text-justify">
                 We are committed to continuous improvement and innovation in signal generation. By refining our models, algorithms, and analytical techniques, we adapt to evolving market conditions and enhance the effectiveness of our trading signals. This proactive approach allows us to deliver consistent value to our clients and maintain our position at the forefront of the industry.
               </p>
             </div>

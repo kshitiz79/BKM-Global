@@ -5,12 +5,12 @@ import { FaUserCircle, FaMoneyBillWave, FaChartLine } from "react-icons/fa";
 
 const cards = [
   {
-    title: "Fund Management",
+    title: "Investment Management",
     description: "We offer comprehensive asset management solutions tailored to meet the diverse needs of our clients.",
     Icon: FaUserCircle,
   },
   {
-    title: "Trading Signals",
+    title: "Market Alert",
     description: "We specialize in delivering precise trading signals that empower investors to make informed decisions.",
     Icon: FaMoneyBillWave,
   },

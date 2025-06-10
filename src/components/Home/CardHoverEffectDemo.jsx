@@ -14,13 +14,13 @@ export function CardHoverEffectDemo() {
 }
 export const projects = [
   {
-    title: "Fund Management",
+    title: "Investment Management",
     description:
       "Fund Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
     link: "",
   },
   {
-    title: "Trading Signals",
+    title: "Market Alerts",
     description:
       "we specialize in delivering precise trading signals that empower investors to make informed decisions and optimize their portfolios for success..",
     link: "",
@@ -31,22 +31,5 @@ export const projects = [
       "we believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
     link: "",
   },
-  {
-    title: "Fund Management",
-    description:
-      "Fund Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
-    link: "",
-  },
-  {
-    title: "Trading Signals",
-    description:
-      "we specialize in delivering precise trading signals that empower investors to make informed decisions and optimize their portfolios for success..",
-    link: "",
-  },
-  {
-    title: "Uplearn",
-    description:
-      "we believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
-    link: "",
-  },
+ 
 ];

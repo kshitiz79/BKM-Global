@@ -3,19 +3,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const testimonials = [
   {
     image: "/fund1.png",
     title: "Understanding the Basics",
-    quote:"Fund management, also known as asset management, involves a structured approach to managing both intangible and tangible assets to maximize their value. This encompasses a wide range of assets, from intellectual property and goodwill to equipment and real estate. The primary goal of fund management is to operate, deploy, maintain, dispose of, and upgrade assets in the most cost-efficient and profit-yielding manner possible.",
+    quote:"Investment management, also known as asset management, involves a structured approach to managing both intangible and tangible assets to maximize their value. This encompasses a wide range of assets, from intellectual property and goodwill to equipment and real estate. The primary goal of fund management is to operate, deploy, maintain, dispose of, and upgrade assets in the most cost-efficient and profit-yielding manner possible.",
     name: "Anjali S.",
     role: "Bangalore",
     avatar: "/fund1.png",
   },
   {
     image: "/fund1.png",
-    title: "The Role of a Fund Manager",
+    title: "The Role of a Investment Manager",
     quote:
       "A fund manager plays a critical role in this process. They must meticulously balance cost and risk to capitalize on cash flow opportunities. In financial institutions, the ability to offer credit to customers hinges on the proper liquidity of funds, making the fund manager's role indispensable. Effective fund management ensures that financial resources are available when needed, facilitating smooth operations and growth.",
     name: "Rajesh K.",
@@ -65,7 +66,7 @@ export default function Section1() {
         {/* Right Content */}
         <div className="w-full md:w-1/2">
           <span className="inline-block bg-gray-200 text-sm text-[#07372B] font-medium px-4 py-1 rounded-full mb-4">
-            What is Fund Management?
+            What is Investment Management?
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#07372B] mb-4">
             {testimonial.title}
@@ -79,7 +80,7 @@ export default function Section1() {
           </div>
 
           {/* Quote */}
-          <p className="text-gray-700 text-lg mb-6">“{testimonial.quote}”</p>
+          <p className="text-gray-700 text-lg mb-6 text-justify">“{testimonial.quote}”</p>
 
           {/* Profile
           <div className="flex items-center gap-4">
@@ -113,6 +114,15 @@ export default function Section1() {
           </div>
         </div>
       </div>
+    
+       <a
+              href="https://wa.me/9740633154"
+              className="fixed bottom-6 right-6 bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-105 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="text-white text-2xl" />
+            </a>
     </section>
   );
 }

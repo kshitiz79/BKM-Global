@@ -1,6 +1,8 @@
 
 "use client";
 import React from 'react';
+ import { FaWhatsapp } from "react-icons/fa";
+      
 
 const Banner = () => {
   return (
@@ -34,6 +36,16 @@ const Banner = () => {
     className="h-full object-contain shadow-[ -10px_-10px_30px_rgba(0,0,0,1) ] sm:hidden w-full "
   />
 </div>
+
+     
+   <a
+              href="https://wa.me/9740633154"
+              className="fixed bottom-6 right-6 bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-105 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="text-white text-2xl" />
+            </a>
     </section>
   );
 };
