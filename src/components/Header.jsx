@@ -17,7 +17,8 @@ const transition = {
 
 export const MenuItem = ({ setActive, active, item, href = "#", children }) => {
   const pathname = usePathname();
-  const isActive = pathname === href || pathname.startsWith(href);
+  const isHome = href === "/";
+  const isActive = isHome ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <div onMouseEnter={() => setActive?.(item)} className="relative">
