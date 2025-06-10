@@ -9,7 +9,7 @@ const testimonials = [
   {
     image: "/fund1.png",
     title: "Understanding the Basics",
-    quote:"Investment management, also known as asset management, involves a structured approach to managing both intangible and tangible assets to maximize their value. This encompasses a wide range of assets, from intellectual property and goodwill to equipment and real estate. The primary goal of fund management is to operate, deploy, maintain, dispose of, and upgrade assets in the most cost-efficient and profit-yielding manner possible.",
+    quote:"Investment management, also known as asset management, involves a structured approach to managing both intangible and tangible assets to maximize their value. This encompasses a wide range of assets, from intellectual property and goodwill to equipment and real estate. The primary goal of Investment management is to operate, deploy, maintain, dispose of, and upgrade assets in the most cost-efficient and profit-yielding manner possible.",
     name: "Anjali S.",
     role: "Bangalore",
     avatar: "/fund1.png",
@@ -18,7 +18,7 @@ const testimonials = [
     image: "/fund1.png",
     title: "The Role of a Investment Manager",
     quote:
-      "A fund manager plays a critical role in this process. They must meticulously balance cost and risk to capitalize on cash flow opportunities. In financial institutions, the ability to offer credit to customers hinges on the proper liquidity of funds, making the fund manager's role indispensable. Effective fund management ensures that financial resources are available when needed, facilitating smooth operations and growth.",
+      "A fund manager plays a critical role in this process. They must meticulously balance cost and risk to capitalize on cash flow opportunities. In financial institutions, the ability to offer credit to customers hinges on the proper liquidity of funds, making the fund manager's role indispensable. Effective Investment management ensures that financial resources are available when needed, facilitating smooth operations and growth.",
     name: "Rajesh K.",
     role: "Bengaluru",
     avatar: "/testimonial1.png",

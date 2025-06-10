@@ -5,7 +5,7 @@ const services = [
     title: "Personalized Investment Strategies",
     image: "/fund5.png",
     description:
-      "At BKM Global, we recognize that each client has unique financial goals and risk tolerance levels. Our fund management services are tailored to meet your specific needs. We develop personalized investment strategies that align with your objectives, ensuring that your assets are managed effectively.",
+      "At BKM Global, we recognize that each client has unique financial goals and risk tolerance levels. Our Investment management services are tailored to meet your specific needs. We develop personalized investment strategies that align with your objectives, ensuring that your assets are managed effectively.",
   },
   {
     title: "Diverse Asset Management",
@@ -17,7 +17,7 @@ const services = [
     title: "Ongoing Performance Monitoring",
     image: "/fund7.png",
     description:
-      "Effective fund management requires continuous monitoring and adjustments. At BKM Global, we use advanced analytical tools and technologies to track the performance of your assets. Our fund managers regularly review and rebalance portfolios to adapt to changing market conditions and capitalize on new opportunities.",
+      "Effective Investment management requires continuous monitoring and adjustments. At BKM Global, we use advanced analytical tools and technologies to track the performance of your assets. Our fund managers regularly review and rebalance portfolios to adapt to changing market conditions and capitalize on new opportunities.",
   },
   {
     title: "Transparent Reporting",

@@ -8,7 +8,7 @@ const Section5 = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white">How BKM Global Generates Signals</h1>
           <p className="mt-4 text-lg text-gray-300">
-            At BKM Global, we employ a robust approach to generating trading signals, combining advanced technology with expert analysis:
+            At BKM Global, we employ a robust approach to generating Market Alerts, combining advanced technology with expert analysis:
           </p>
         </div>
 
@@ -48,7 +48,7 @@ const Section5 = () => {
               </div>
               <h2 className="text-2xl font-semibold text-white mb-4">Expert Analysis</h2>
               <p className="text-gray-300 text-justify ">
-                Our team of experienced analysts provides qualitative insights and context to quantitative data analysis. By integrating technical expertise with market insights, we enhance the reliability and relevance of our trading signals. This human element ensures that our signals not only reflect market conditions but also consider broader economic factors and geopolitical events that impact market dynamics.
+                Our team of experienced analysts provides qualitative insights and context to quantitative data analysis. By integrating technical expertise with market insights, we enhance the reliability and relevance of our Market alerts. This human element ensures that our signals not only reflect market conditions but also consider broader economic factors and geopolitical events that impact market dynamics.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ const Section5 = () => {
               </div>
               <h2 className="text-2xl font-semibold text-white mb-4">Continuous Improvement</h2>
               <p className="text-gray-300 text-justify">
-                We are committed to continuous improvement and innovation in signal generation. By refining our models, algorithms, and analytical techniques, we adapt to evolving market conditions and enhance the effectiveness of our trading signals. This proactive approach allows us to deliver consistent value to our clients and maintain our position at the forefront of the industry.
+                We are committed to continuous improvement and innovation in signal generation. By refining our models, algorithms, and analytical techniques, we adapt to evolving market conditions and enhance the effectiveness of our Market Alerts. This proactive approach allows us to deliver consistent value to our clients and maintain our position at the forefront of the industry.
               </p>
             </div>
           </div>

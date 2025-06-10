@@ -4,10 +4,10 @@ export default function Section1() {
   const fundData = [
     {
       id: 1,
-      title: "What Are Trading Signals?",
+      title: "What Are Market Alerts?",
       image: "/fund2.png",
       description:
-        "Trading signals are actionable triggers derived from comprehensive market analysis. They serve as indicators of when to buy or sell securities based on various methodologies. These methodologies include technical indicators, mathematical algorithms, and fundamental analysis, each contributing unique insights into market conditions.",
+        "Market Alerts are actionable triggers derived from comprehensive market analysis. They serve as indicators of when to buy or sell securities based on various methodologies. These methodologies include technical indicators, mathematical algorithms, and fundamental analysis, each contributing unique insights into market conditions.",
     },
   ];
 

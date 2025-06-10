@@ -7,7 +7,7 @@ export default function Section2() {
       title: "Maximizing Returns",
       image: "/fund2.png",
       description:
-        "The core objective of fund management is to achieve the highest possible returns on investments while mitigating risks. This involves a careful analysis of market trends, economic conditions, and individual asset performance. By leveraging their expertise, fund managers at BKM Global make informed decisions that enhance the value of your investments.",
+        "The core objective of Investment management is to achieve the highest possible returns on investments while mitigating risks. This involves a careful analysis of market trends, economic conditions, and individual asset performance. By leveraging their expertise, fund managers at BKM Global make informed decisions that enhance the value of your investments.",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Section2() {
       title: "Liquidity Management",
       image: "/fund4.png",
       description:
-        "Ensuring liquidity is another vital aspect of fund management. This involves maintaining the right balance between liquid and illiquid assets to meet short-term and long-term financial obligations. Our fund managers are adept at managing liquidity, ensuring that your funds are readily available when needed without compromising on growth opportunities.",
+        "Ensuring liquidity is another vital aspect of Investment management. This involves maintaining the right balance between liquid and illiquid assets to meet short-term and long-term financial obligations. Our fund managers are adept at managing liquidity, ensuring that your funds are readily available when needed without compromising on growth opportunities.",
     },
   ];
 
