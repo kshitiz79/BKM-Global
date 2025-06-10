@@ -123,7 +123,7 @@ function Navbar({ className }) {
             <MenuItem item="Services" href="/services-page/fund-management" active={active} setActive={setActive}>
               <div className="text-sm grid grid-cols-2 gap-4 p-4">
                 <ProductItem
-                  title="Fund Management"
+                  title="Investment Management"
                   href="/services-page/fund-management"
                   src="/fund-mang.png"
                   description="Comprehensive Asset Management Solutions"
