@@ -120,7 +120,7 @@ function Navbar({ className }) {
           <Menu setActive={setActive}>
             <MenuItem item="Home" href="/" />
             <MenuItem item="About" href="/about-page" />
-            <MenuItem item="Services" href="/services-page" active={active} setActive={setActive}>
+            <MenuItem item="Services" href="/" active={active} setActive={setActive}>
               <div className="text-sm grid grid-cols-2 gap-4 p-4">
                 <ProductItem
                   title="Fund Management"
