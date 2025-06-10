@@ -11,7 +11,7 @@ export function TimelineDemo() {
       content: (
         <div>
           <p
-            className="text-neutral-100 dark:text-neutral-200 text-lg md:text-sm font-normal mb-8">
+            className="text-neutral-100 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8 text-justify">
            BKM Global has a rich history of innovation and growth. From our humble beginnings, we have grown into a leading provider of financial services, helping clients around the world achieve their investment goals. Our journey has been marked by a series of milestones and achievements that reflect our commitment to excellence and our ability to adapt to changing market conditions.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -48,11 +48,11 @@ export function TimelineDemo() {
       content: (
         <div>
           <p
-            className="text-neutral-100 dark:text-neutral-200 text-lg md:text-sm font-normal mb-8">
+            className="text-neutral-100 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8 text-justify">
             Innovation is central to all our endeavors. We constantly explore new ideas, technologies, and strategies to enhance our services and deliver better outcomes for our clients.
           </p>
           <p
-            className="text-neutral-100 dark:text-neutral-200 text-lg md:text-sm font-normal mb-8">
+            className="text-neutral-100 dark:text-neutral-200 text-xl md:text-xl font-normal mb-8 text-justify">
             Our commitment to innovation ensures that we remain at the forefront of the industry, providing cutting-edge solutions that meet the evolving needs of our clients.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -89,16 +89,16 @@ export function TimelineDemo() {
       content: (
         <div>
           <p
-            className="text-neutral-100 dark:text-neutral-200 text-lg md:text-sm font-normal mb-4">
+            className="text-neutral-100 dark:text-neutral-200 text-xl md:text-xl font-normal mb-4 text-justify">
             Looking ahead, we are excited about the future of BKM Global. 
           </p>
           <div className="mb-8">
             <div
-              className="flex gap-2 items-center text-neutral-100 dark:text-neutral-300 text-xs md:text-sm">
+              className="flex gap-2 items-center text-neutral-100 dark:text-neutral-300 text-xs md:text-xl text-justify">
               We are committed to expanding our services, exploring new markets, and leveraging emerging technologies to better serve our clients.
             </div>
             <div
-              className="flex gap-2 items-center text-1eutral-700 dark:text-neutral-300 text-lg md:text-sm">
+              className="flex gap-2 items-center text-1eutral-700 dark:text-neutral-300 text-lg md:text-xl text-justify">
                Our focus will always remain on helping you invest in your financial well-being and achieve your long-term goals.
             </div>
             

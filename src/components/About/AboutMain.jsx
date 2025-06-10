@@ -22,7 +22,7 @@ const serviceData = [
 
 const Services = () => {
   return (
-    <div className="w-full py-16 bg-black">
+    <div className="w-full py-4 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Services Section */}
         <div className="text-center mb-16">
@@ -69,7 +69,7 @@ const Services = () => {
             Our Commitment to You
           </h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-gray-50 dark:text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-50 dark:text-gray-300 text-lg leading-relaxed text-justify">
               We believe our success is intrinsically linked to the success of our clients. 
               Therefore, we are dedicated to forging enduring relationships founded on trust, 
               openness, and mutual respect. We take the time to understand your unique 
