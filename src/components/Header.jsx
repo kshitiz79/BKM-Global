@@ -26,7 +26,7 @@ export const MenuItem = ({ setActive, active, item, href = "#", children }) => {
         <motion.p
           transition={{ duration: 0.3 }}
           className={`cursor-pointer px-2 py-1 rounded-md text-black dark:text-white hover:opacity-[0.9] ${
-            isActive ? "font-semibold underline underline-offset-4" : ""
+            isActive ? "font-semibold underline text-blue-900" : ""
           }`}
         >
           {item}

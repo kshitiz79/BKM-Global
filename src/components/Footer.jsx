@@ -29,9 +29,9 @@ export default function Footer() {
           <Link href="https://www.instagram.com/bkmglobal24/" aria-label="Instagram">
             <FaInstagram className="text-xl hover:text-gray-900 transition-colors" />
           </Link>
-          <Link href="*" aria-label="LinkedIn">
+          {/* <Link href="/" aria-label="LinkedIn">
             <FaLinkedinIn className="text-xl hover:text-gray-900 transition-colors" />
-          </Link>
+          </Link> */}
         </div>
       </div>
 

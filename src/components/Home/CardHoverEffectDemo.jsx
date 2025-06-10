@@ -16,7 +16,7 @@ export const projects = [
   {
     title: "Investment Management",
     description:
-      "Fund Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
+      "Investment Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
     link: "",
   },
   {
