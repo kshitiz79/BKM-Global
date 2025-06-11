@@ -61,7 +61,7 @@ const ContactUs = () => {
               <p>
                 <span className="font-semibold text-white">Phone:</span>{' '}
                 <a href="tel:+918431891335" className="text-green-500 hover:underline">
-                  +91 8431891335
+                  +91 9740633154
                 </a>
               </p>
             </div>
@@ -133,6 +133,21 @@ const ContactUs = () => {
                     required
                   />
                 </div>
+              </div>
+
+                            <div>
+                <label className="block text-sm mb-1">
+                Budget <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  name="total Budget"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message..."
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  rows="4"
+                  required
+                />
               </div>
 
               <div>
