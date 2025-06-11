@@ -120,16 +120,17 @@ const ContactUs = () => {
               <div>
                 <label className="block text-sm mb-1">Phone Number <span className="text-red-500">*</span></label>
                 <div className="flex">
-                  <span className="inline-flex items-center px-3 rounded-l-md bg-gray-700 border border-r-0 border-gray-600 text-gray-400">🇮🇳</span>
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="0587685575"
-                    className="w-full p-3 rounded-r-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    required
-                  />
+
+                <input
+  type="tel"
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+  placeholder="+91 9876543210"
+  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+  required
+/>
+
                 </div>
               </div>
 
