@@ -159,17 +159,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm mb-1">Message (optional)</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us more about your project..."
-                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  rows={3}
-                />
-              </div>
+             
 
               <button
                 type="submit"
