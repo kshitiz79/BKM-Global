@@ -143,7 +143,7 @@ const ContactUs = () => {
                   name="total Budget"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Your message..."
+                  placeholder="Budget.."
                   className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
                   rows="1"
                   required
