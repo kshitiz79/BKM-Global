@@ -8,30 +8,37 @@ const ContactUs = () => {
     name: '',
     email: '',
     phone: '',
+    budget: '',
+    location: '',
     message: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Contact Form Data:', formData);
     alert('Thank you for reaching out! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      budget: '',
+      location: '',
+      message: '',
+    });
   };
 
-  // Animation variants for cards
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-bold text-white mb-8">Get in Touch</h1>
@@ -71,7 +78,6 @@ const ContactUs = () => {
 
         {/* Right Section - Form and Details Cards */}
         <div className="md:w-1/2 w-full flex flex-col gap-6">
-          {/* Contact Form Card */}
           <motion.div
             className="bg-gray-800 rounded-xl shadow-2xl p-6 text-white"
             variants={cardVariants}
@@ -86,96 +92,93 @@ const ContactUs = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm mb-1">
-                  Full Name <span className="text-red-500">*</span>
-                </label>
+                <label className="block text-sm mb-1">Full Name <span className="text-red-500">*</span></label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="e.g. Don Joe"
-                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm mb-1">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
+                <label className="block text-sm mb-1">Email Address <span className="text-red-500">*</span></label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="name@example.com"
-                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm mb-1">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
+                <label className="block text-sm mb-1">Phone Number <span className="text-red-500">*</span></label>
                 <div className="flex">
-                  <span className="inline-flex items-center px-3 rounded-l-md bg-gray-700 border border-r-0 border-gray-600 text-gray-400">
-                    🇮🇳
-                  </span>
+                  <span className="inline-flex items-center px-3 rounded-l-md bg-gray-700 border border-r-0 border-gray-600 text-gray-400">🇮🇳</span>
                   <input
                     type="text"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="0587685575"
-                    className="w-full p-3 rounded-r-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
+                    className="w-full p-3 rounded-r-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                     required
                   />
                 </div>
               </div>
 
-                            <div>
-                <label className="block text-sm mb-1">
-                Budget <span className="text-red-500">*</span>
-                </label>
+              <div>
+                <label className="block text-sm mb-1">Budget <span className="text-red-500">*</span></label>
                 <textarea
-                  name="total Budget"
-                  value={formData.message}
+                  name="budget"
+                  value={formData.budget}
                   onChange={handleChange}
-                  placeholder="Budget.."
-                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  rows="1"
+                  placeholder="Your budget..."
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  rows={1}
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm mb-1">
-                  Location <span className="text-red-500">*</span>
-                </label>
+                <label className="block text-sm mb-1">Location <span className="text-red-500">*</span></label>
                 <textarea
                   name="location"
+                  value={formData.location}
+                  onChange={handleChange}
+                  placeholder="Your address..."
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  rows={2}
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm mb-1">Message (optional)</label>
+                <textarea
+                  name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Your address...."
-                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  rows="4"
-                  required
+                  placeholder="Tell us more about your project..."
+                  className="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  rows={3}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-green-500 text-white p-3 rounded-md hover:bg-green-600 transition-colors transform hover:scale-105"
+                className="w-full bg-green-500 text-white p-3 rounded-md hover:bg-green-600 transition-transform transform hover:scale-105"
               >
                 Send Message
               </button>
             </form>
           </motion.div>
-
-          {/* Contact Details Card */}
-         
         </div>
       </div>
     </div>
