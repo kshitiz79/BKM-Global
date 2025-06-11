@@ -152,10 +152,10 @@ const ContactUs = () => {
 
               <div>
                 <label className="block text-sm mb-1">
-                  Message <span className="text-red-500">*</span>
+                  Location <span className="text-red-500">*</span>
                 </label>
                 <textarea
-                  name="message"
+                  name="location"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your message..."
