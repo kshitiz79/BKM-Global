@@ -52,7 +52,7 @@ export default function ServicesGrid() {
         </h2>
       </div>
       <div
-        className="grid md:grid-cols-3 gap-x-10 gap-y-16 opacity-90"
+        className="grid md:grid-cols-3 gap-x-10 gap-y-16 opacity-90 p-8"
         style={{
           backgroundImage: "url('/blog-bg.png')",
           backgroundSize: "cover",
