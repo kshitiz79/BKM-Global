@@ -4,7 +4,7 @@ import { HoverEffect } from "./../../ui/card-hover-effect";
 
 export function CardHoverEffectDemo() {
   return (
-    <div className="bg-black">
+    <div className="bg-black relative z-10">
     <div className="max-w-7xl mx-auto px-4">
       <HoverEffect items={projects} />
     </div>
