@@ -23,7 +23,7 @@ const cards = [
 
 export default function WhyToChooseUs() {
   return (
-    <section className="bg-black text-white">
+    <section className="relative bg-black text-white">
     <section className=" py-12 max-w-7xl mx-auto px-8">
         <h1 className="uppercase mb-10 md:text-4xl text-2xl mx-auto text-center ">Our Services</h1>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">

@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 export default function TradingStrategyCards() {
-  // 1. Define distinct chart data for each strategy
   const dayTradingData = {
     labels: ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM"],
     datasets: [
@@ -21,7 +21,6 @@ export default function TradingStrategyCards() {
   };
 
   const swingTradingData = {
-    // Example: capturing daily performance over 2 weeks
     labels: [
       "Mon (W1)",
       "Tue (W1)",
@@ -47,7 +46,6 @@ export default function TradingStrategyCards() {
   };
 
   const positionTradingData = {
-    // Example: showing yearly performance
     labels: ["2018", "2019", "2020", "2021", "2022", "2023"],
     datasets: [
       {
@@ -62,7 +60,6 @@ export default function TradingStrategyCards() {
   };
 
   const scalpingData = {
-    // Example: capturing performance in 5-minute increments
     labels: ["10:00", "10:05", "10:10", "10:15", "10:20", "10:25"],
     datasets: [
       {
@@ -76,37 +73,23 @@ export default function TradingStrategyCards() {
     ],
   };
 
-  // 2. Chart options (shared across all strategies)
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true,
-        grid: {
-          color: "#374151", // Tailwind gray-700
-        },
-        ticks: {
-          color: "#d1d5db", // Tailwind gray-300
-        },
+        grid: { color: "#374151" },
+        ticks: { color: "#d1d5db" },
       },
       x: {
-        grid: {
-          color: "#374151",
-        },
-        ticks: {
-          color: "#d1d5db",
-        },
+        grid: { color: "#374151" },
+        ticks: { color: "#d1d5db" },
       },
     },
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
+    plugins: { legend: { display: false } },
   };
 
-  // 3. Map each strategy to its unique chart data
   const strategies = [
     {
       title: "Day Trading",
@@ -134,38 +117,34 @@ export default function TradingStrategyCards() {
     },
   ];
 
-
   return (
-
-    <>
-    <div className="bg-black py-16">
-
-
-        <h1 className="md:text-4xl text-2xl text-center  text-white mb-8  uppercase">
-          Trading Strategies
-        </h1>
-       
-  
-
-    <div className="bg-black">
-    <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto gap-6 p-4 ">
-      {strategies.map((strategy) => (
-        <div
-          key={strategy.title}
-          className="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col"
-        >
-          <h2 className="text-xl font-semibold text-white mb-2">
-            {strategy.title}
-          </h2>
-          <p className="text-gray-300 text-sm mb-4">{strategy.description}</p>
-          <div className="relative h-40">
-            <Line data={strategy.chartData} options={options} />
-          </div>
-        </div>
-      ))}
+    <div className="relative bg-white text-black py-16">
+      <h1 className="md:text-5xl text-4xl text-center mb-8 uppercase">
+        Trading Strategies
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto gap-6 p-4">
+        {strategies.map((strategy, i) => (
+          <motion.div
+            key={strategy.title}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: i * 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col"
+          >
+            <h2 className="text-xl font-semibold text-white mb-2">
+              {strategy.title}
+            </h2>
+            <p className="text-gray-300 text-sm mb-4">
+              {strategy.description}
+            </p>
+            <div className="relative h-40">
+              <Line data={strategy.chartData} options={options} />
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
-    </div>
-    </div>
-    </>
   );
 }

@@ -23,7 +23,7 @@ const cards = [
 
 export function MeteorsDemo() {
   return (
-    <div className="bg-black">
+    <div className="bg-white relative">
     <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 bg-black">
       {cards.map(card => (
         <div key={card.id} className="relative w-full">

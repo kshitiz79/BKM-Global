@@ -63,11 +63,6 @@
     padding-top: 90px; /* Adjust to your header's height */
   }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 :root {
     --radius: 0.625rem;
@@ -147,6 +142,11 @@ body {
     }
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+
 
 
 @theme inline {
@@ -157,4 +157,67 @@ body {
       transform: translate(calc(-50% - 0.5rem));
     }
   }
+}
+
+
+.btn-custom {
+  @apply relative inline-block text-white font-bold px-8 py-3 text-sm tracking-wide;
+  clip-path: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-started {
+  background-color: #0d0d0d;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#0d0d0d, #0d0d0d), linear-gradient(to right, #0061ff, #60efbc);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.btn-started::before,
+.btn-started::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #0061ff;
+}
+
+.btn-started::before {
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.btn-started::after {
+  bottom: 0;
+  right: 0;
+  background: #60efbc;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.btn-whitepaper {
+  background-color: #1a1e24;
+  border: 1px solid #7b7b7b;
+}
+
+.btn-whitepaper::before,
+.btn-whitepaper::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+}
+
+.btn-whitepaper::before {
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.btn-whitepaper::after {
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }

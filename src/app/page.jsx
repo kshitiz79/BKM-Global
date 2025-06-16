@@ -1,30 +1,27 @@
 "use client";
-import Banner from "@/components/Home/Banner";
-import { CardHoverEffectDemo } from "@/components/Home/CardHoverEffectDemo";
-import { CardStackDemo } from "@/components/Home/CardStackDemo";
-import { MeteorsDemo } from "@/components/Home/MeteorsDemo";
+
 import { ShootingStarsAndStarsBackgroundDemo } from "@/components/Home/ShootingStarsAndStarsBackgroundDemo";
-import WhyToChooseUs from "./../components/Home/WhyToChooseUs";
 import Forex from "@/components/Home/Forex";
 import TradingStrategyCards from "@/components/Home/TradingStrategies";
-import MarqueeCards from "@/components/Home/MarqueeCards";
-import { FloatingDockDemo } from "@/components/FloatingDockDemo";
+
+import BlockchainHero from "@/components/Home/BlockchainHero";
+import OurServices from "@/components/Home/OurServices";
+
+import ScrollImageStack from "@/components/Home/ScrollImageStack";
+import ContactSection from "@/components/Home/ContactUs";
+
 
 
 export default function Home() {
   return (
    <div>
-    <Banner/>
-   <MeteorsDemo/>
+    <BlockchainHero/>
    <ShootingStarsAndStarsBackgroundDemo/>
-<CardHoverEffectDemo/>
-<Forex/>
-<MarqueeCards/>
-<WhyToChooseUs/>
-
-<TradingStrategyCards/>
-<CardStackDemo/>
-
+   <Forex/>
+   <ScrollImageStack/>
+   <OurServices/>
+   <TradingStrategyCards/>
+   <ContactSection/>
    </div>
   );
 }
