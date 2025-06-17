@@ -113,7 +113,7 @@ export default function ContactSection() {
     stateZip: 'Bangalore- 560 095 Karnataka',
     email: 'info@bkmglobal.in',
     website: 'www.bkmglobal.com',
-    phone1: '+91 84318 91335',
+    phone1: '+91 9740633154',
  
   },
 ].map((office, index) => (
