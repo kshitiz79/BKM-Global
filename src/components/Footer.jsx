@@ -104,8 +104,8 @@ export default function Footer() {
                     <div className="flex items-center mb-4">
                     <FiPhone className="mr-2" size={18} />
                     <p>
-                    <a href="tel:+918431891335" className="hover:underline">
-                    +91 84318 91335
+                    <a href="tel:+919740633154" className="hover:underline">
+                    +919740633154
                     </a>
                     </p>
                     </div>
