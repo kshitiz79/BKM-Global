@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
           <a
-href="https://wa.me/9740633154"
+href="https://api.whatsapp.com/send/?phone=919740633154&text&type=phone_number&app_absent=0"
 className="fixed bottom-6 right-6 bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-105 transition"
 target="_blank"
 rel="noopener noreferrer"
