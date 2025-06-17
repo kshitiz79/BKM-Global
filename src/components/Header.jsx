@@ -132,7 +132,7 @@ function Navbar({ className }) {
                   title="Market Alerts"
                   href="/services-page/trading-signals"
                   src="/trading-signals.png"
-                  description="Comprehensive Trading Signals for Strategic Investment"
+                  description="Comprehensive Market Alerts for Strategic Investment"
                 />
                 <ProductItem
                   title="Uplearn"
@@ -185,7 +185,7 @@ function Navbar({ className }) {
                 title="Market Alerts"
                 href="/services-page/trading-signals"
                 src="/trading-signals.png"
-                description="Comprehensive Trading Signals for Strategic Investment"
+                description="Comprehensive Market Alerts for Strategic Investment"
               />
               <ProductItem
                 title="Uplearn"

@@ -6,10 +6,17 @@ import Footer from "@/components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
 
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter", // Optional if using CSS variables
+});
+
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <Header />
    

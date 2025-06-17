@@ -5,7 +5,7 @@ import { InfiniteMovingCards } from "./../../ui/infinite-moving-cards";
 
 export function MarqueeCards() {
   return (
-    <div className="bg-black text-white py-20">
+    <div className="relative bg-black text-white py-20">
       <h1 className="md:text-4xl text-2xl text-center  text-white uppercase mb-10">WHY TO CHOOSE US</h1>
     <div
       className=" rounded-md flex flex-col antialiased   dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">

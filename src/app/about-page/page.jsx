@@ -13,7 +13,6 @@ const page = () => {
       <SpotlightPreview/>
       <Services/>
       <TimelineDemo/>
-      
     </div>
   )
 }
