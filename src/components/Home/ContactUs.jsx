@@ -106,11 +106,11 @@ export default function ContactSection() {
   {
     title: 'Our Office Details',
     building: 'Cita Building',
-    street: '1st floor,1st C Main , Koramangala 7th Block',
+    street: 'Electronic City Phase 1,',
     locality: 'Bommasandra Industrial Estate',
     city: 'Bengalore',
     district: 'Bengaluru Urban',
-    stateZip: 'Bangalore- 560 095 Karnataka',
+    stateZip: 'Bangalore- 560100 Karnataka',
     email: 'info@bkmglobal.in',
     website: 'www.bkmglobal.com',
     phone1: '+91 9740633154',
@@ -119,7 +119,7 @@ export default function ContactSection() {
 ].map((office, index) => (
   <div
     key={index}
-    className=" shadow-2xl rounded-xl p-6 flex flex-col justify-between transform hover:scale-[1.02] hover:shadow-3xl transition-all duration-500 ease-in-out max-w-sm mx-auto border border-blue-100 relative group"
+    className=" shadow-2xl rounded-xl w-[30rem] p-6 flex px-1- flex-col justify-between transform hover:scale-[1.02] hover:shadow-3xl transition-all duration-500 ease-in-out max-w-sm mx-auto border border-blue-100 relative group"
   >
     {/* Floating Icon */}
     <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
