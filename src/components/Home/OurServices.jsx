@@ -79,9 +79,9 @@ export default function OlympTradeFeatures() {
             <p className="text-lg font-medium">Consistency</p>
           </div>
 
-          <div
-            className="relative bg-blue-900/80 rounded-xl p-6 text-white text-center flex items-center justify-center font-medium"
-            style={{ backgroundImage: `url('/6.jpg')` }}
+            <div
+            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/60 bg-blend-overlay bg-cover bg-center"
+            style={{ backgroundImage: `url('/6.png')` }}
           >
             Consistency is key to successful investing. Our platform supports
             Fund Managers in maintaining consistent performance, ensuring steady

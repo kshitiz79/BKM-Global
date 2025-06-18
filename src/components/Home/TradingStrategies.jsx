@@ -12,9 +12,9 @@ export default function TradingStrategyCards() {
       {
         label: "Performance",
         data: [10, 30, 25, 40, 20, 50, 60, 70],
-        borderColor: "#22c55e",
-        backgroundColor: "rgba(34, 197, 94, 0.2)",
-        tension: 0.3,
+        borderColor: "#3b82f6",
+        backgroundColor: "rgba(59, 130, 246, 0.3)",
+        tension: 0.4,
         fill: true,
       },
     ],
@@ -37,9 +37,9 @@ export default function TradingStrategyCards() {
       {
         label: "Performance",
         data: [10, 20, 30, 25, 35, 45, 40, 55, 60, 65],
-        borderColor: "#22c55e",
-        backgroundColor: "rgba(34, 197, 94, 0.2)",
-        tension: 0.3,
+        borderColor: "#10b981",
+        backgroundColor: "rgba(16, 185, 129, 0.3)",
+        tension: 0.4,
         fill: true,
       },
     ],
@@ -51,9 +51,9 @@ export default function TradingStrategyCards() {
       {
         label: "Performance",
         data: [10, 30, 50, 80, 140, 200],
-        borderColor: "#22c55e",
-        backgroundColor: "rgba(34, 197, 94, 0.2)",
-        tension: 0.3,
+        borderColor: "#f59e0b",
+        backgroundColor: "rgba(245, 158, 11, 0.3)",
+        tension: 0.4,
         fill: true,
       },
     ],
@@ -65,9 +65,9 @@ export default function TradingStrategyCards() {
       {
         label: "Performance",
         data: [10, 12, 8, 15, 20, 18],
-        borderColor: "#22c55e",
-        backgroundColor: "rgba(34, 197, 94, 0.2)",
-        tension: 0.3,
+        borderColor: "#ef4444",
+        backgroundColor: "rgba(239, 68, 68, 0.3)",
+        tension: 0.4,
         fill: true,
       },
     ],
@@ -79,15 +79,24 @@ export default function TradingStrategyCards() {
     scales: {
       y: {
         beginAtZero: true,
-        grid: { color: "#374151" },
-        ticks: { color: "#d1d5db" },
+        grid: { color: "#e5e7eb" },
+        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
       },
       x: {
-        grid: { color: "#374151" },
-        ticks: { color: "#d1d5db" },
+        grid: { color: "#e5e7eb" },
+        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
       },
     },
-    plugins: { legend: { display: false } },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: "#1f2937",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        borderColor: "#e5e7eb",
+        borderWidth: 1,
+      },
+    },
   };
 
   const strategies = [
@@ -96,52 +105,57 @@ export default function TradingStrategyCards() {
       description:
         "Day trading involves making multiple trades within a single day to capitalize on short-term market movements.",
       chartData: dayTradingData,
+      color: "#3b82f6",
     },
     {
       title: "Swing Trading",
       description:
         "Swing trading focuses on capturing gains over a period of days or weeks by analyzing market cycles and price swings.",
       chartData: swingTradingData,
+      color: "#10b981",
     },
     {
       title: "Position Trading",
       description:
         "Position trading is a long-term approach, holding trades for weeks or years, relying on fundamental analysis and market trends.",
       chartData: positionTradingData,
+      color: "#f59e0b",
     },
     {
       title: "Scalping",
       description:
         "Scalping involves making numerous small trades throughout the day to profit from minor price changes with disciplined focus.",
       chartData: scalpingData,
+      color: "#ef4444",
     },
   ];
 
   return (
-    <div className="relative bg-white text-black py-16">
-      <h1 className="md:text-5xl text-4xl text-center mb-8 uppercase">
-        Trading Strategies
+    <div className="relative bg-gradient-to-b from-white to-gray-50 text-black py-20">
+      <h1 className="md:text-5xl text-4xl text-center font-md text-gray-900 mb-12 uppercase tracking-tight">
+        Explore Trading Strategies
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto gap-6 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-7xl px-8 mx-auto gap-8 p-4">
         {strategies.map((strategy, i) => (
           <motion.div
             key={strategy.title}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: i * 0.1 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col"
+            className="bg-white rounded-xl shadow-xl p-6 flex flex-col border border-gray-200 hover:shadow-2xl transition-shadow duration-300"
           >
-            <h2 className="text-xl font-semibold text-white mb-2">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
               {strategy.title}
             </h2>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-gray-700 text-base mb-4 leading-relaxed">
               {strategy.description}
             </p>
-            <div className="relative h-40">
+            <div className="relative h-48 mb-4">
               <Line data={strategy.chartData} options={options} />
             </div>
+           
           </motion.div>
         ))}
       </div>

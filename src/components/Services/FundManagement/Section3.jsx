@@ -1,5 +1,5 @@
+// Section3 Component
 import Image from "next/image";
-
 const services = [
   {
     title: "Personalized Investment Strategies",
@@ -27,16 +27,16 @@ const services = [
   },
 ];
 
-export default function Section3() {
+export function Section3() {
   return (
-    <section className="bg-black text-white py-16 px-4">
+    <section className="bg-gradient-to-b from-white to-gray-50 text-gray-900 py-16 px-4">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">Our Investment Management Services</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Investment Management Services</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
         {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center text-center space-y-6">
+          <div key={index} className="flex flex-col items-center text-center space-y-6 bg-white rounded-lg shadow-lg p-6 border border-gray-200">
             <div className="w-full h-60 relative">
               <Image
                 src={service.image}
@@ -45,8 +45,8 @@ export default function Section3() {
                 className="object-cover rounded-lg"
               />
             </div>
-            <h3 className="text-xl font-semibold">{service.title}</h3>
-            <p className="text-gray-300 text-justify">{service.description}</p>
+            <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+            <p className="text-gray-700 text-justify">{service.description}</p>
           </div>
         ))}
       </div>
