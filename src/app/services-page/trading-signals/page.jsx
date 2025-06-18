@@ -1,5 +1,5 @@
-import Section from '@/components/Services/Trading/Section'
-import Section1 from '@/components/Services/Trading/Section1'
+import {Section } from '@/components/Services/Trading/Section'
+import{ Section1 }from '@/components/Services/Trading/Section1'
 import Section3 from '@/components/Services/Trading/Section3'
 import Section4 from '@/components/Services/Trading/Section4'
 import Section5 from '@/components/Services/Trading/Section5'

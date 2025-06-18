@@ -25,9 +25,9 @@ const services = [
   },
 ];
 
-export default function Section2() {
+export function Section2() {
   return (
-    <section className="bg-black text-white py-14 px-4 md:px-8">
+    <section className="bg-gradient-to-b from-white to-gray-50 text-gray-900 py-14 px-4 md:px-8">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-semibold mb-12">
           Master the Markets with Insights <br className="hidden md:block" />
@@ -38,21 +38,21 @@ export default function Section2() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="group relative bg-[#1a1a1a] rounded-xl p-6 hover:pb-18 flex flex-col items-center justify-center hover:scale-105 transition duration-300 border border-gray-700 overflow-hidden"
+              className="group relative bg-white rounded-xl p-6 hover:pb-18 flex flex-col items-center justify-center hover:scale-105 transition duration-300 border border-gray-200 shadow-lg overflow-hidden"
             >
               <Image
                 src={service.icon}
                 alt={service.title}
                 width={60}
                 height={60}
-                className="mb-4"
+                className="mb-4 border border-gray-200 rounded-full"
               />
-              <p className="text-center text-lg font-medium">{service.title}</p>
+              <p className="text-center text-lg font-medium text-gray-900">{service.title}</p>
 
               {/* Hover Button */}
               <Link
                 href={service.link}
-                className="absolute bottom-4 opacity-0 group-hover:opacity-100 transition duration-300 bg-white text-black text-sm px-5 py-2 rounded-full shadow-md font-medium"
+                className="absolute bottom-4 opacity-0 group-hover:opacity-100 transition duration-300 bg-blue-600 text-white text-sm px-5 py-2 rounded-full shadow-md font-medium"
               >
                 Know More
               </Link>
