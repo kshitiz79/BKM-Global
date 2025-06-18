@@ -26,7 +26,7 @@ export default function Forex() {
         {/* Right: Text (1/2) */}
         <div className="md:w-1/2 h-[600px] flex items-center text-black ">
           <div className="space-y-6">
-            <h1 className="text-3xl md:text-5xl leading-snug ">
+            <h1 className="text-3xl md:text-5xl  ">
               Applying Strategies in the Currency Market
             </h1>
             <p className="text-[1.2rem] md:text-[1.4rem] text-justify text-black">
