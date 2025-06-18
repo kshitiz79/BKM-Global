@@ -18,13 +18,13 @@ export function SpotlightPreview() {
 
 
       <Spotlight className="-top-10 left-0 md:-top-8 md:left-0" fill="white" />
-      <div className="relative z-10 mx-auto w-full max-w-5xl p-4 pt-20 md:pt-0">
+      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
         <h1
           className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-black md:text-7xl">
           Our Principles
         </h1>
         <p
-          className="mx-10 mt-4 text-center text-2xl font-normal text-neutral-950 text-justify">
+          className="mx-10 mt-4 text-center text-2xl font-normal text-neutral-950 ">
          We are guided by a set of core principles that define who we are and what we stand for. These principles ensure that we never lose sight of 
          our mission and remain dedicated to serving our clients. First, we adopt a client-centric approach where your goals become our goals. We represent your voice, your needs, and your investment objectives in every decision we make, prioritizing your interests above all else.
 

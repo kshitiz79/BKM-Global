@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const serviceData = [
   {
-    title: "Crypto Trading",
-    description: "Expert guidance and strategies for trading in the cryptocurrency market. Our team of experienced traders helps you navigate the complexities of the crypto world to maximize your returns.",
+    title: "Uplearn",
+    description: "We believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
     icon: "💹"
   },
   {
@@ -45,13 +45,13 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-black dark:bg-neutral-800 p-8 rounded-xl shadow-2xl shadow-black hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-white p-8 rounded-xl shadow-lg  transition-all duration-300"
             >
               <div className="text-5xl mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-semibold text-gray-100 dark:text-white mb-4">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-50 dark:text-gray-20 text-lg leading-relaxed">
+              <p className="text-gray-900 dark:text-gray-900 text-lg leading-relaxed">
                 {service.description}
               </p>
             </motion.div>
@@ -63,13 +63,13 @@ const Services = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-gray-950 shadow-md shadow-white dark:bg-neutral-800 rounded-2xl p-8 md:p-12 max-w-7xl mx-auto"
+          className="bg-white shadow-md shadow-white dark:bg-neutral-800 rounded-2xl border-2 p-8 md:p-12 max-w-7xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-gray-50 dark:text-white mb-6">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-black mb-6">
             Our Commitment to You
           </h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-gray-50 dark:text-gray-300 text-lg leading-relaxed text-justify">
+            <p className="text-gray-900 dark:text-gray-900 text-lg leading-relaxed text-justify">
               We believe our success is intrinsically linked to the success of our clients. 
               Therefore, we are dedicated to forging enduring relationships founded on trust, 
               openness, and mutual respect. We take the time to understand your unique 
