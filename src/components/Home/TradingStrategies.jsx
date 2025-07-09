@@ -2,14 +2,111 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Line } from "react-chartjs-2";
+import { Chart as ChartJS } from "chart.js/auto";
 
 export default function TradingStrategyCards() {
+  const dayTradingData = {
+    labels: ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM"],
+    datasets: [
+      {
+        label: "Performance",
+        data: [10, 30, 25, 40, 20, 50, 60, 70],
+        borderColor: "#3b82f6",
+        backgroundColor: "rgba(59, 130, 246, 0.3)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const swingTradingData = {
+    labels: [
+      "Mon (W1)",
+      "Tue (W1)",
+      "Wed (W1)",
+      "Thu (W1)",
+      "Fri (W1)",
+      "Mon (W2)",
+      "Tue (W2)",
+      "Wed (W2)",
+      "Thu (W2)",
+      "Fri (W2)",
+    ],
+    datasets: [
+      {
+        label: "Performance",
+        data: [10, 20, 30, 25, 35, 45, 40, 55, 60, 65],
+        borderColor: "#10b981",
+        backgroundColor: "rgba(16, 185, 129, 0.3)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const positionTradingData = {
+    labels: ["2018", "2019", "2020", "2021", "2022", "2023"],
+    datasets: [
+      {
+        label: "Performance",
+        data: [10, 30, 50, 80, 140, 200],
+        borderColor: "#f59e0b",
+        backgroundColor: "rgba(245, 158, 11, 0.3)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const scalpingData = {
+    labels: ["10:00", "10:05", "10:10", "10:15", "10:20", "10:25"],
+    datasets: [
+      {
+        label: "Performance",
+        data: [10, 12, 8, 15, 20, 18],
+        borderColor: "#ef4444",
+        backgroundColor: "rgba(239, 68, 68, 0.3)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: "#e5e7eb" },
+        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
+      },
+      x: {
+        grid: { color: "#e5e7eb" },
+        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
+      },
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: "#1f2937",
+        titleColor: "#ffffff",
+        bodyColor: "#ffffff",
+        borderColor: "#e5e7eb",
+        borderWidth: 1,
+      },
+    },
+  };
+
   const strategies = [
-  
+    
     {
       title: "Scalping",
       description:
         "Scalping involves making numerous small trades throughout the day to profit from minor price changes with disciplined focus.",
+      chartData: scalpingData,
+      color: "#ef4444",
     },
   ];
 
@@ -35,17 +132,10 @@ export default function TradingStrategyCards() {
             <p className="text-gray-700 text-base mb-4 leading-relaxed">
               {strategy.description}
             </p>
-            <div className="relative h-[60vh] mb-4">
-              <iframe
-                src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_abcde&symbol=NASDAQ%3AAAPL&interval=15&studies=your_indicator_name"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowTransparency={true}
-                scrolling="no"
-                title={`TradingView ${strategy.title}`}
-              ></iframe>
+            <div className="relative h-78 mb-4">
+              <Line data={strategy.chartData} options={options} />
             </div>
+           
           </motion.div>
         ))}
       </div>
