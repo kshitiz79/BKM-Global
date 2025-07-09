@@ -44,10 +44,12 @@ export function ShootingStarsAndStarsBackgroundDemo() {
       {/* Heading and description */}
       <div className="relative z-10 flex flex-col justify-center max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black text-left max-w-6xl mx-auto">
-          <span className="text-blue-900 font-md">BKM Global</span>: Elevating Your Investment Experience
+          <span className="text-blue-900 font-md">BKM Global</span>:  Comprehensive global trading solutions
         </h2>
         <p className="text-base sm:text-lg md:text-xl mt-4 text-black text-left max-w-6xl mx-auto">
-          At BKM Global, we simplify investment management with our cutting‑edge Multi‑Level Management (MLM) platform, delivering innovative, efficient solutions that help Fund Managers and Investors grow their assets.
+        At BKM Global, We live and breathe the markets. Since 2009, we've educated traders to help them learn about the markets.
+We provide solutions to different types of worldwide trading problems in best way possible.Our Algo trading offers precision, speed,
+and automation, enhancing trading efficiency and reducing human error
         </p>
       </div>
 

@@ -61,13 +61,13 @@ const ContactUs = () => {
             </p>
             <p>
               <span className="font-semibold text-gray-800">Email:</span>{' '}
-              <a href="mailto:info@bkmglobal.in" className="text-blue-500 hover:underline">
-                info@bkmglobal.in
+              <a href="mailto:support@bkmglobal.in" className="text-blue-800 hover:underline">
+                support@bkmglobal.in
               </a>
             </p>
             <p>
               <span className="font-semibold text-gray-800">Phone:</span>{' '}
-              <a href="tel:+918431891335" className="text-blue-500 hover:underline">
+              <a href="tel:+918431891335" className="text-blue-800 hover:underline">
                 +91 9740633154
               </a>
             </p>
@@ -128,18 +128,7 @@ const ContactUs = () => {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm mb-1">Budget <span className="text-red-500">*</span></label>
-                <textarea
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  placeholder="Your budget..."
-                  className="w-full p-3 rounded-md bg-gray-100 text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows={1}
-                  required
-                />
-              </div>
+            
 
               <div>
                 <label className="block text-sm mb-1">Location <span className="text-red-500">*</span></label>
@@ -157,7 +146,7 @@ const ContactUs = () => {
               <button
                 type="button"
                 onClick={handleSubmit}
-                className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 transition-transform transform hover:scale-105"
+                className="w-full bg-blue-900 text-white p-3 rounded-md hover:bg-blue-800 transition-transform transform hover:scale-105"
               >
                 Send Message
               </button>

@@ -1,112 +1,127 @@
-"use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
+import { MapPin, Mail, Phone, Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
-    <footer className="relative bg-white text-gray-900">
+    <footer className="relative bg-gradient-to-br from-slate-50 to-white text-gray-800 border-t border-gray-100">
       {/* Top section: Social networks */}
-      <div className="relative border-b border-gray-200 py-4 flex flex-col md:flex-row justify-between items-center lg:px-16 z-10 text-center">
-        <div className="mb-2 md:mb-0">Get connected with us on social networks:</div>
-        <div className="flex space-x-4">
-          <Link href="https://www.facebook.com/people/BKM-Global/61561378508716/" aria-label="Facebook">
-            <FaFacebookF className="text-xl hover:text-gray-900 transition-colors" />
-          </Link>
-          <Link href="https://www.instagram.com/bkmglobal24/" aria-label="Instagram">
-            <FaInstagram className="text-xl hover:text-gray-900 transition-colors" />
-          </Link>
+      <div className="relative border-b border-gray-200 py-6 flex flex-col md:flex-row justify-between items-center lg:px-16 z-10 bg-white/50 backdrop-blur-sm">
+        <div className="mb-3 md:mb-0 text-sm font-medium text-gray-600">
+          Get connected with us on social networks:
+        </div>
+        <div className="flex space-x-6">
+          <a 
+            href="https://www.facebook.com/profile.php?id=61561378508716" 
+            aria-label="Facebook"
+            className="p-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all duration-300 hover:scale-110"
+          >
+            <Facebook className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://www.instagram.com/bkmglobal24/" 
+            aria-label="Instagram"
+            className="p-2 rounded-full bg-pink-50 text-pink-600 hover:bg-pink-100 transition-all duration-300 hover:scale-110"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
         </div>
       </div>
 
       {/* Main footer section */}
-      <div className="relative mx-auto py-10 px-6 md:px-12 lg:px-16 border-b border-gray-100 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+      <div className="relative mx-auto py-16 px-6 md:px-12 lg:px-20 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Logo */}
           <div className="text-center lg:text-left">
-            <img src="/logo.png" alt="logo" className="w-48 mx-auto lg:mx-0" />
+            <div className="mb-6">
+              <img 
+                src="/logo.png" 
+                alt="BKM Global Logo" 
+                className="w-44 mx-auto lg:mx-0 drop-shadow-sm" 
+              />
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-xs mx-auto lg:mx-0">
+              Your trusted partner in global trading solutions and financial services.
+            </p>
           </div>
 
           {/* Pages */}
           <div className="text-center lg:text-left">
-            <h6 className="uppercase font-semibold mb-4">Pages</h6>
-            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
-              <Link href="/">Home</Link>
-            </p>
-            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
-              <Link href="/services">Service</Link>
-            </p>
-            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
-              <Link href="/blog">Blog</Link>
-            </p>
-            <p className="mb-4 text-black hover:text-gray-800 transition-colors">
-              <Link href="/contact">Contact</Link>
-            </p>
+            <h6 className="text-lg font-bold text-gray-900 mb-6 relative">Pages
+            </h6>
+            <div className="space-y-3">
+              <p className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                <a href="/" className="hover:underline underline-offset-2">Home</a>
+              </p>
+              <p className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                <a href="/services-page/fund-management" className="hover:underline underline-offset-2">Services</a>
+              </p>
+              <p className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                <a href="/blog-page" className="hover:underline underline-offset-2">Blog</a>
+              </p>
+              <p className="text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                <a href="/contact-us" className="hover:underline underline-offset-2">Contact</a>
+              </p>
+            </div>
           </div>
 
           {/* Services */}
           <div className="text-center lg:text-left">
-            <h6 className="uppercase font-semibold mb-4">Services</h6>
-            <p className="mb-4">
-              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
-                Day Trading
-              </Link>
-            </p>
-            <p className="mb-4">
-              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
-                Swing Trading
-              </Link>
-            </p>
-            <p className="mb-4">
-              <Link href="#" className="text-gray-900 hover:text-gray-100 transition-colors">
-                Position Trading
-              </Link>
-            </p>
+            <h6 className="text-lg font-bold text-gray-900 mb-6 relative">
+              Services
+           
+            </h6>
+            <div className="space-y-3">
+              <p className="text-gray-700 hover:text-green-600 transition-colors duration-200">
+                <a href="/services-page/fund-management" className="hover:underline underline-offset-2">Investment Management</a>
+              </p>
+              <p className="text-gray-700 hover:text-green-600 transition-colors duration-200">
+                <a href="/services-page/trading-signals" className="hover:underline underline-offset-2">Market Alerts</a>
+              </p>
+              <p className="text-gray-700 hover:text-green-600 transition-colors duration-200">
+                <a href="/services-page/uplearn" className="hover:underline underline-offset-2">Uplearn</a>
+              </p>
+            </div>
           </div>
 
           {/* Contact */}
-          <div className="text-center lg:text-left text-black">
-            <h6 className="uppercase font-semibold mb-4">Contact</h6>
-            <div className="flex flex-col items-center lg:items-start">
-              <div className="flex mb-4">
-                <Link
-                  href="https://www.google.com/maps/place/Electronic+City+Phase+1,+Bengaluru,+Karnataka+560100,+India"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FiMapPin className="mr-2" size={18} />
-                </Link>
-                <p className="hover:underline">
-                  <Link
+          <div className="text-center lg:text-left">
+            <h6 className="text-lg font-bold text-gray-900 mb-6 relative">
+              Contact
+           
+            </h6>
+            <div className="space-y-4">
+              <div className="flex items-start justify-center lg:justify-start">
+                <MapPin className="mr-3 mt-1 text-blue-900 flex-shrink-0" size={18} />
+                <p className="text-gray-700 text-sm">
+                  <a
                     href="https://www.google.com/maps/place/Electronic+City+Phase+1,+Bengaluru,+Karnataka+560100,+India"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-blue-900 transition-colors duration-200"
                   >
-                    Electronic City Phase 1, Bengaluru, Karnataka 560100, India
-                  </Link>
-                </p>
-              </div>
-              <div className="flex items-center mb-4">
-                <FiMail className="mr-2" size={18} />
-                <p>
-                  <a href="mailto:info@bkmglobal.in" className="hover:underline">
-                    info@bkmglobal.in
+                   Cita Building 408, 1st Floor, 1st C Main, Koramangala 7th Block Bangalore - 560095, Karnataka, India
                   </a>
                 </p>
               </div>
-              <div className="flex items-center mb-4">
-                <FiPhone className="mr-2" size={18} />
-                <p>
-                  <a href="tel:+919740633154" className="hover:underline">
-                    +919740633154
+              <div className="flex items-center justify-center lg:justify-start">
+                <Mail className="mr-3 text-blue-900 flex-shrink-0" size={18} />
+                <p className="text-gray-700 text-sm">
+                  <a 
+                    href="mailto:support@bkmglobal.in" 
+                    className="hover:text-blue-900 transition-colors duration-200"
+                  >
+                    support@bkmglobal.in
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center justify-center lg:justify-start">
+                <Phone className="mr-3 text-blue-900 flex-shrink-0" size={18} />
+                <p className="text-gray-700 text-sm">
+                  <a 
+                    href="tel:+919740633154" 
+                    className="hover:text-blue-900 transition-colors duration-200"
+                  >
+                    +91 97406 33154
                   </a>
                 </p>
               </div>
@@ -115,20 +130,36 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="relative bg-gray-950 text-center py-4 z-10 flex flex-col md:flex-row justify-between items-center px-6 text-xs md:text-sm">
-        <p className="text-gray-300 mb-2 md:mb-0">
-          Powered by{" "}
-          <Link href="https://rbshstudio.com" className="text-gray-400 font-semibold">
-            RBSH Studio
-          </Link>
-        </p>
-        <p className="text-gray-300">
-          © 2025 Copyright:{" "}
-          <Link href="/" className="text-gray-400 font-semibold ml-1">
-            BKM GLOBAL
-          </Link>
-        </p>
+      {/* Copyright and Legal */}
+      <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 text-center py-6 z-10">
+        <div className="flex flex-col md:flex-row justify-between items-center px-6 lg:px-20 space-y-3 md:space-y-0">
+          <p className="text-gray-300 text-sm order-2 md:order-1">
+            © 2025 Copyright:{" "}
+            <a 
+              href="/" 
+              className="text-blue-600 font-semibold hover:text-blue-300 transition-colors duration-200"
+            >
+              BKM GLOBAL
+            </a>
+          </p>
+          <p className="text-gray-300 text-sm order-1 md:order-2">
+            Powered by{" "}
+            <a 
+              href="https://rbshstudio.com" 
+              className="text-blue-600 font-semibold hover:text-blue-300 transition-colors duration-200"
+            >
+              RBSH Studio
+            </a>
+          </p>
+          <div className="text-xs order-3">
+            <a 
+              href="/privacy-policy" 
+              className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

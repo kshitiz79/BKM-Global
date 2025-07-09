@@ -24,7 +24,7 @@ const videoData = [
 export default function ScrollVideoStack() {
   return (
     <div className="bg-white relative w-full">
-      <h1 className="text-5xl md:text-6xl text-black text-center pt-12 mb-4">
+      <h1 className="text-5xl md:text-5xl font-bold text-black text-center pt-12 mb-4">
         Our Services
       </h1>
 

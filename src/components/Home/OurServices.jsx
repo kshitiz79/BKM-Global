@@ -1,92 +1,68 @@
 "use client";
-import Image from "next/image";
+import { motion } from "framer-motion";
+
+const features = [
+  {
+    image: '/5.png',
+    title: 'High Potential Returns',
+    description: 'At BKM Global, we prioritize strategies that offer high-potential returns. Our platform allows Fund Managers to optimize their trading strategies, aiming for maximum profitability while managing risk effectively.',
+  },
+  {
+    image: '/7.png',
+    title: 'Transparency',
+    description: `We are committed to maintaining full transparency in everything we do. Investors can monitor their accounts in real-time, ensuring they are always informed about their investments' performance.`,
+  },
+  {
+    image: '/8.png',
+    title: 'Power of Referral',
+    description: `Our referral system empowers users to grow their networks and increase their earnings. By referring new investors or Fund Managers to our platform, you can benefit from additional rewards.`,
+    span: 'md:col-span-2',
+  },
+  {
+    image: '/9.png',
+    title: 'Hassle-Free Environment',
+    description: `We strive to provide a user-friendly and hassle-free environment. Our platform is designed to be intuitive, making it easy for both novice and experienced investors to navigate and manage their investments.`,
+    span: 'md:col-span-2',
+  },
+  {
+    image: '/6.png',
+    title: 'Consistency',
+    description: 'Consistency is key to successful investing. Our platform supports Fund Managers in maintaining consistent performance, ensuring steady growth and reliable returns for investors.',
+    span: 'md:col-span-2',
+  },
+];
 
 export default function OlympTradeFeatures() {
   return (
-    <section className="relative bg-white text-black pb-12 px-4 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-6xl md:text-6xl mb-12">
-          <span className="text-blue-900">Why</span> traders prefer BKM GLOBALS
+    <section className="relative bg-white text-black pb-20 px-8 md:px-16">
+      <div className="max-w-7xl mx-auto px-10">
+        <h2 className="text-center text-4xl md:text-5xl font-bold mb-16 leading-tight">
+          <span className="text-blue-900">Why</span> Traders Prefer BKM GLOBALS
         </h2>
 
-        {/* Row 1 - Two Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-white">
-          <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/80 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/5.png')` }} // <-- Add your image path
-          >
-            {/* <Image src="/1.png" alt="High Potential Returns" width={120} height={120} className="mb-4" /> */}
-            <p className="text-lg font-medium mb-2">High Potential Returns</p>
-            <p>
-              At BKM Global, we prioritize strategies that offer high-potential returns.
-              Our platform allows Fund Managers to optimize their trading strategies,
-              aiming for maximum profitability while managing risk effectively.
-            </p>
-          </div>
-
-          <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center text-white bg-black/80 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/7.png')` }}
-          >
-            {/* <Image src="/2.png" alt="Transparency" width={120} height={120} className="mb-4" /> */}
-            <p className="text-lg font-medium mb-2">Transparency</p>
-            <p>
-              We are committed to maintaining full transparency in everything we do.
-              Investors can monitor their accounts in real-time, ensuring they are
-              always informed about their investments' performance.
-            </p>
-          </div>
-        </div>
-
-        {/* Row 2 - Full Width */}
-        <div className="mb-6 text-white">
-          <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/80 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/8.png')` }}
-          >
-            <p className="text-2xl font-semibold mb-2">Power of Referral</p>
-            <p>
-              Our referral system empowers users to grow their networks and increase
-              their earnings. By referring new investors or Fund Managers to our
-              platform, you can benefit from additional rewards.
-            </p>
-          </div>
-        </div>
-
-        {/* Row 3 - Full Width */}
-        <div className="mb-6 text-white">
-          <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/80 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/9.png')` }}
-          >
-            {/* <Image src="/3.png" alt="Hassle-Free Environment" width={120} height={120} className="mb-4" /> */}
-            <p className="text-lg font-medium mb-2">Hassle-Free Environment</p>
-            <p className="text-sm">
-              We strive to provide a user-friendly and hassle-free environment.
-              Our platform is designed to be intuitive, making it easy for both
-              novice and experienced investors to navigate and manage their investments.
-            </p>
-          </div>
-        </div>
-
-        {/* Row 4 - Two Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
-          <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/60 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/6.png')` }}
-          >
-            {/* <Image src="/4.png" alt="Consistency" width={120} height={120} className="mb-4" /> */}
-            <p className="text-lg font-medium">Consistency</p>
-          </div>
-
-            <div
-            className="relative rounded-xl p-6 text-center flex flex-col items-center justify-center bg-black/60 bg-blend-overlay bg-cover bg-center"
-            style={{ backgroundImage: `url('/6.png')` }}
-          >
-            Consistency is key to successful investing. Our platform supports
-            Fund Managers in maintaining consistent performance, ensuring steady
-            growth and reliable returns for investors.
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {features.map(({ image, title, description, span }, idx) => (
+            <motion.div
+              key={idx}
+              className={`relative w-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 ${span || ''}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div
+                className="absolute inset-0 bg-blend-overlay bg-black/60"
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+              <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-white">{title}</h3>
+                <p className="text-base leading-relaxed text-gray-200">{description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,38 +1,46 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import { login } from "@/utils/api"; // ✅ import login function
 
 const Login = () => {
-  // State to manage form data
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
-  // Handle form input changes
+  const [message, setMessage] = useState(""); // Optional feedback
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, this would authenticate the user via an API
-    console.log('Login Form Data:', formData);
-    alert('Login successful!');
-    setFormData({ email: '', password: '' });
+    try {
+      const res = await login(formData); // 🔥 call backend API
+      console.log("Login successful:", res);
+
+      // If JWT token is returned
+      if (res.token) {
+        localStorage.setItem("token", res.token); // Optional: store token
+      }
+
+      setMessage("Login successful!");
+      // Optionally redirect to dashboard
+      // router.push("/dashboard"); (if using next/router)
+    } catch (error) {
+      console.error("Login failed:", error);
+      setMessage("Invalid credentials. Please try again.");
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4">
-      {/* Main Content */}
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl">
-        {/* Left Section - Image */}
-       
-        {/* Right Section - Login Form */}
         <div className="md:w-1/2 w-full flex justify-center">
           <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md text-white">
             <h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -40,7 +48,6 @@ const Login = () => {
               Access your account to manage your forex trading activities.
             </p>
 
-            {/* Login Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm mb-1">
@@ -79,8 +86,12 @@ const Login = () => {
                 Login
               </button>
 
+              {message && (
+                <p className="text-center text-sm mt-4 text-gray-300">{message}</p>
+              )}
+
               <p className="text-xs text-gray-400 mt-4 text-center">
-                Forgot your password?{' '}
+                Forgot your password?{" "}
                 <a href="#" className="text-green-500 hover:underline">
                   Reset it
                 </a>

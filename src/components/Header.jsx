@@ -110,9 +110,9 @@ function Navbar({ className }) {
     <div
       className={`fixed inset-x-0 w-full mx-auto z-50 shadow dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
     >
-      <div className="flex items-center justify-between px-6 sm:px-8 lg:px-24">
+      <div className="flex items-center justify-between sm:px-8 lg:px-24">
         <div className="logo">
-          <img src="/logo.png" alt="Logo" className="h-20 ml-8 w-auto" />
+          <img src="/logo.png" alt="Logo" className="h-20  w-auto" />
         </div>
 
         {/* Desktop Menu */}
@@ -142,8 +142,8 @@ function Navbar({ className }) {
                 />
               </div>
             </MenuItem>
-            <MenuItem item="Blog" href="/blog-page" />
-            <MenuItem item="Privacy Policy" href="/privacy-policy" />
+            <MenuItem item="Blogs" href="/blog-page" />
+            {/* <MenuItem item="Privacy Policy" href="/privacy-policy" /> */}
             <MenuItem item="Contact Us" href="/contact-us" />
           </Menu>
         </div>

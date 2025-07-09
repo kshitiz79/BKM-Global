@@ -29,16 +29,15 @@ export default function BlockchainHero() {
 
   {/* Text Content */}
   <div className="relative z-20 px-6 lg:px-16 py-20 w-full text-white">
-    <h1 className=" text-[3.6rem] leading-tight mb-8 max-w-7xl uppercase font-bold ">
-      A New Way To Learn And Trade
+    <h1 className=" text-[3rem] leading-tight mb-8 max-w-7xl uppercase font-bold ">
+    Unlocking the Future of Financial Trading with Next-Generation Algo Software
     </h1>
-    <p className="text-[1.5rem] mb-10 leading-relaxed">
-      A brief, compelling paragraph that explains 
-      what you do <br className="hidden md:block" />  or 
-      what you offer and why visitors  should care.
+    <p className="text-[1.3rem] mb-10 leading-relaxed">
+    We offer a wide variety of highly attuned trading <br /> systems and Next-Generation Algo Software , <br /> specifically curated to meet different investor <br /> needs and risk appetites
+    through our <br /> numerous,time tested and proven <br /> trading strategy.
     </p>
     <div className="flex gap-6 mt-6 flex-wrap">
-      <a href="#" className="btn-custom btn-started">
+      <a href="/contact-us" className="btn-custom btn-started">
         GET STARTED
       </a>
     </div>

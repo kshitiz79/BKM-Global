@@ -123,8 +123,8 @@ const PrivacyPolicy = () => {
       <div className="w-full max-w-5xl mt-8 text-center text-gray-600 text-sm">
         <p>
           Effective Date: June 5, 2025 | For inquiries, contact us at{' '}
-          <a href="mailto:info@bkmglobal.in" className="text-blue-500 hover:underline">
-            info@bkmglobal.in
+          <a href="mailto:support@bkmglobal.in" className="text-blue-500 hover:underline">
+            support@bkmglobal.in
           </a>
         </p>
       </div>
