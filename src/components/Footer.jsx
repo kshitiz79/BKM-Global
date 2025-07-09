@@ -80,6 +80,12 @@ export default function Footer() {
               <p className="text-gray-700 hover:text-green-600 transition-colors duration-200">
                 <a href="/services-page/uplearn" className="hover:underline underline-offset-2">Uplearn</a>
               </p>
+              <a 
+              href="/privacy-policy" 
+              className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+            >
+              Privacy Policy
+            </a>
             </div>
           </div>
 
@@ -152,12 +158,7 @@ export default function Footer() {
             </a>
           </p>
           <div className="text-xs order-3">
-            <a 
-              href="/privacy-policy" 
-              className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
-            >
-              Privacy Policy
-            </a>
+           
           </div>
         </div>
       </div>
