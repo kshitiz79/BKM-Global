@@ -145,24 +145,9 @@ const AdminLogin = () => {
         </form>
 
         {/* Demo Credentials */}
-        <div className="mt-8 p-4 bg-gray-50 rounded-xl">
-          <h3 className="text-sm font-semibold text-gray-700 mb-2">Demo Credentials:</h3>
-          <div className="text-sm text-gray-600 space-y-1">
-            <p><strong>Email:</strong> admin@bkmglobal.in</p>
-            <p><strong>Password:</strong> BKM@Admin123</p>
-          </div>
-        </div>
-
+      
         {/* Backend Setup Instructions */}
-        <div className="mt-6 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
-          <h3 className="text-sm font-semibold text-yellow-800 mb-2">Backend Setup Required:</h3>
-          <div className="text-sm text-yellow-700 space-y-1">
-            <p>1. Open terminal in BKM-Backend folder</p>
-            <p>2. Run: <code className="bg-yellow-200 px-1 rounded">npm install</code></p>
-            <p>3. Run: <code className="bg-yellow-200 px-1 rounded">npm start</code></p>
-            <p>4. Backend will run on port 8000</p>
-          </div>
-        </div>
+    
 
         {/* Footer */}
         <div className="mt-6 text-center">
