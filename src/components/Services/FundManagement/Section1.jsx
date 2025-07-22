@@ -1,55 +1,121 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaShieldAlt, FaChartLine, FaUsers, FaGlobe } from "react-icons/fa";
 
-const testimonials = [
-  // {
-  //   image: "/fund1.png",
-  //   title: "Understanding the Basics",
-  //   quote:
-  //     "Investment management, also known as asset management, involves a structured approach to managing both intangible and tangible assets to maximize their value. This encompasses a wide range of assets, from intellectual property and goodwill to equipment and real estate. The primary goal of investment management is to operate, deploy, maintain, dispose of, and upgrade assets in the most cost-efficient and profit-yielding manner possible.",
-  //   name: "Anjali S.",
-  //   role: "Bangalore",
-  //   avatar: "/fund1.png",
-  // },
+const services = [
   {
-    image: "/fund1.png",
-    title: "The Role of an Investment Manager",
-    quote:
-      "A fund manager plays a critical role in this process. They must meticulously balance cost and risk to capitalize on cash flow opportunities. In financial institutions, the ability to offer credit to customers hinges on the proper liquidity of funds, making the fund manager's role indispensable. Effective investment management ensures that financial resources are available when needed, facilitating smooth operations and growth.",
-    name: "Rajesh K.",
-    role: "Bengaluru",
-    avatar: "/fund1.png",
+    icon: <FaShieldAlt className="w-8 h-8" />,
+    title: "Risk Management",
+    description: "Advanced risk assessment and mitigation strategies to protect your investments."
   },
+  {
+    icon: <FaChartLine className="w-8 h-8" />,
+    title: "Portfolio Optimization",
+    description: "Data-driven portfolio management for maximum returns and minimal risk."
+  },
+  {
+    icon: <FaUsers className="w-8 h-8" />,
+    title: "Expert Advisory",
+    description: "Dedicated team of financial experts providing personalized investment guidance."
+  },
+  {
+    icon: <FaGlobe className="w-8 h-8" />,
+    title: "Global Markets",
+    description: "Access to international markets including Forex, Commodities, and Crypto."
+  }
 ];
 
 export default function Section1() {
   return (
-    <section className="py-16 px-6 md:px-24 lg:px-32 bg-white">
-      <div className="max-w-5xl mx-auto flex flex-col gap-8">
-        <div className="w-full">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#07372B] mb-4 text-center">Professional Forex Fund Management Services</h2>
-          <p className="text-gray-700 text-lg mb-6 text-justify">
-            We offer you Professional Forex Fund Management Services customised as per the Investor Requirement. We also help in Recovery of Loss in your trading Account for corporations, private individuals, Retail traders and others who is keen to invest in Currency markets or Commodities (Gold) and Crypto also. We guide and advise our clients to the best solutions which will suit their personal needs. Our products deliver superior performance in today’s markets, and we continually develop new solutions to meet your investment needs in the future.<br/><br/>
-            We provide investors with a low risk investment, which aims absolute positive returns regardless of market conditions. Our asset management model offers access to client’s capital, safety of their investment and capital protection. Risk management is a priority and managed Forex Trading accounts are administered with very strict investment criteria.
+    <section className="py-20 px-6 md:px-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto">
+        {/* Services Overview */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Investment Management Services
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Comprehensive solutions designed to maximize your investment potential while minimizing risk through professional management and strategic planning.
           </p>
         </div>
-        <div className="w-full">
-          <h3 className="text-2xl font-semibold text-[#07372B] mb-2">How we trade :</h3>
-          <ul className="list-decimal list-inside text-lg text-gray-800 space-y-2 mb-4">
-            <li>Strategy risk is 2% in the market on any one trade.</li>
-            <li>This strategy has a fixed stop loss and aims for a 1:2 & 1:3 risk reward profile.</li>
-            <li>The maximum draw-down is 20% only.</li>
-            <li>Risk management can also be tailored to each individual's needs.</li>
-            <li>The Minimum investment amount for this strategy is $10,000 and above.</li>
-            <li>The expected annual compounded return ranges between 60% a year.</li>
-          </ul>
-          <p className="text-lg text-gray-800 mb-2">There are no management fees, however there will be a 50% commission on the profits.</p>
-          <p className="text-lg text-red-600 font-semibold">Note : We do not take any Money Cash/Cheque from Investors.</p>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="text-blue-600 mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Professional Forex Fund Management Services
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                We offer Professional Forex Fund Management Services customized as per investor requirements. Our services extend to corporations, private individuals, retail traders, and anyone keen to invest in Currency markets, Commodities (Gold), and Crypto.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We provide investors with low-risk investments that aim for absolute positive returns regardless of market conditions. Our asset management model ensures capital safety and protection while maintaining strict investment criteria.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Trading Strategy</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Strategy risk is limited to 2% per trade
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Fixed stop loss with 1:2 & 1:3 risk-reward profile
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Maximum drawdown capped at 20%
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Minimum investment: $10,000
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Expected annual return: up to 60%
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+              <div className="flex items-center mb-3">
+                <FaShieldAlt className="w-5 h-5 text-green-600 mr-2" />
+                <h4 className="font-semibold text-gray-900">Fee Structure</h4>
+              </div>
+              <p className="text-gray-700 mb-2">No management fees - 50% commission on profits only</p>
+              <p className="text-red-600 font-semibold text-sm">
+                Note: We do not accept cash or cheque payments from investors
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <Image
+              src="/fund1.png"
+              alt="Fund Management Strategy"
+              width={600}
+              height={500}
+              className="w-full h-auto rounded-2xl shadow-xl"
+            />
+            <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-200">
+              <div className="text-2xl font-bold text-blue-600">60%</div>
+              <div className="text-sm text-gray-600">Annual Returns</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

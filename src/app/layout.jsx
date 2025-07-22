@@ -15,13 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
-     
-        {/* For SVG favicon: */}
-        <head>
-  <title>BKM Global</title>
-  <link rel="icon" href="/logo.png" type="image/png" />
-</head>
-
+        <title>BKM Global</title>
+        <link rel="icon" href="/logo.png" type="image/png" />
       </head>
       <body>
         <Header />

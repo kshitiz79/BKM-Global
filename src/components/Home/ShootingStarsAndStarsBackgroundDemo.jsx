@@ -15,25 +15,25 @@ export function ShootingStarsAndStarsBackgroundDemo() {
       title: "Investment Management",
       description:
         "Investment Management page, where we offer comprehensive asset management solutions tailored to meet the diverse needs of our clients",
-      link: "",
+      link: "/services-page/fund-management",
     },
     {
       title: "Market Alerts",
       description:
         "We specialize in delivering precise trading signals that empower investors to make informed decisions and optimize their portfolios for success.",
-      link: "",
+      link: "/services-page/trading-signals",
     },
     {
       title: "Uplearn",
       description:
         "We believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
-      link: "",
+      link: "/services-page/uplearn",
     },
     {
       title: "Algo Trading Software",
       description:
         "Algo trading involves creating and implementing a predefined set of rules and instructions that automate the trading process, eliminating the need for manual intervention.",
-      link: "",
+      link: "/services-page/uplearn#algo-trading",
     },
   ];
 
