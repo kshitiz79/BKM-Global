@@ -142,7 +142,7 @@ function Navbar({ className }) {
                 />
               </div>
             </MenuItem>
-            <MenuItem item="Blogs" href="/blog-page" />
+            {/* <MenuItem item="Blogs" href="/blog-page" /> */}
             {/* <MenuItem item="Privacy Policy" href="/privacy-policy" /> */}
             <MenuItem item="Contact Us" href="/contact-us" />
           </Menu>
@@ -195,7 +195,7 @@ function Navbar({ className }) {
               />
             </div>
           </MenuItem>
-          <MenuItem item="Blog" href="/blog-page" />
+          {/* <MenuItem item="Blog" href="/blog-page" /> */}
           <MenuItem item="Privacy Policy" href="/privacy-policy" />
           <MenuItem item="Contact Us" href="/contact-us" />
         </div>
