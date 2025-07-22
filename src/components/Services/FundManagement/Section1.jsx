@@ -28,101 +28,30 @@ const testimonials = [
 ];
 
 export default function Section1() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
-
-  // Auto-slide every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextTestimonial();
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const testimonial = testimonials[currentIndex];
-
   return (
-    <section className="py-16 px-16 md:px-24 lg:px-32 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 transition-all duration-500">
-        {/* Left Image */}
-        <div className="flex-shrink-0 w-full md:w-1/2">
-          <div className="relative w-full h-[400px] md:h-[450px] rounded-3xl overflow-hidden">
-            <Image
-              src={testimonial.image}
-              alt="Testimonial"
-              fill
-              className="object-cover"
-            />
-          </div>
+    <section className="py-16 px-6 md:px-24 lg:px-32 bg-white">
+      <div className="max-w-5xl mx-auto flex flex-col gap-8">
+        <div className="w-full">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#07372B] mb-4 text-center">Professional Forex Fund Management Services</h2>
+          <p className="text-gray-700 text-lg mb-6 text-justify">
+            We offer you Professional Forex Fund Management Services customised as per the Investor Requirement. We also help in Recovery of Loss in your trading Account for corporations, private individuals, Retail traders and others who is keen to invest in Currency markets or Commodities (Gold) and Crypto also. We guide and advise our clients to the best solutions which will suit their personal needs. Our products deliver superior performance in today’s markets, and we continually develop new solutions to meet your investment needs in the future.<br/><br/>
+            We provide investors with a low risk investment, which aims absolute positive returns regardless of market conditions. Our asset management model offers access to client’s capital, safety of their investment and capital protection. Risk management is a priority and managed Forex Trading accounts are administered with very strict investment criteria.
+          </p>
         </div>
-
-        {/* Right Content */}
-        <div className="w-full md:w-1/2">
-          <span className="inline-block bg-gray-200 text-sm text-[#07372B] font-medium px-4 py-1 rounded-full mb-4">
-            What is Investment Management?
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#07372B] mb-4">
-            {testimonial.title}
-          </h2>
-
-          {/* Stars */}
-          <div className="flex gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-[#07372B]" />
-            ))}
-          </div>
-
-          {/* Quote */}
-          <p className="text-gray-700 text-lg mb-6 text-justify">“{testimonial.quote}”</p>
-
-          {/* Profile */}
-          <div className="flex items-center gap-4">
-            <Image
-              src={testimonial.avatar}
-              alt={testimonial.name}
-              width={50}
-              height={50}
-              className="rounded-full"
-            />
-            <div>
-              <h4 className="font-semibold text-[#07372B]">{testimonial.name}</h4>
-              <p className="text-sm text-gray-500">{testimonial.role}</p>
-            </div>
-          </div>
-
-          {/* Arrows */}
-          <div className="flex gap-4 mt-8">
-            <button
-              onClick={prevTestimonial}
-              className="w-10 h-10 rounded-full border border-gray-800 text-black flex items-center justify-center hover:bg-[#07372B] hover:text-white transition"
-            >
-              <FiArrowLeft />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="w-10 h-10 rounded-full border border-gray-800 text-black flex items-center justify-center hover:bg-[#07372B] hover:text-white transition"
-            >
-              <FiArrowRight />
-            </button>
-          </div>
+        <div className="w-full">
+          <h3 className="text-2xl font-semibold text-[#07372B] mb-2">How we trade :</h3>
+          <ul className="list-decimal list-inside text-lg text-gray-800 space-y-2 mb-4">
+            <li>Strategy risk is 2% in the market on any one trade.</li>
+            <li>This strategy has a fixed stop loss and aims for a 1:2 & 1:3 risk reward profile.</li>
+            <li>The maximum draw-down is 20% only.</li>
+            <li>Risk management can also be tailored to each individual's needs.</li>
+            <li>The Minimum investment amount for this strategy is $10,000 and above.</li>
+            <li>The expected annual compounded return ranges between 60% a year.</li>
+          </ul>
+          <p className="text-lg text-gray-800 mb-2">There are no management fees, however there will be a 50% commission on the profits.</p>
+          <p className="text-lg text-red-600 font-semibold">Note : We do not take any Money Cash/Cheque from Investors.</p>
         </div>
       </div>
-
-      <a
-        href="https://wa.me/9740633154"
-        className="fixed bottom-6 right-6 bg-[#25D366] p-3 rounded-full shadow-lg hover:scale-105 transition"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp className="text-white text-2xl" />
-      </a>
     </section>
   );
 }

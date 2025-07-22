@@ -124,7 +124,7 @@ export default function TradingStrategyCards() {
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-white rounded-xl shadow-xl p-6 flex flex-col border border-gray-200 hover:shadow-2xl transition-shadow duration-300"
+            className="bg-white rounded-xl  p-6 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300"
           >
             <h2 className="text-2xl font-bold text-gray-900 mb-3">
               {strategy.title}

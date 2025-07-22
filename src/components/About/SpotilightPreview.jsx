@@ -12,15 +12,27 @@ export function SpotlightPreview() {
         )}
       />
 
-      <Spotlight className="-top-10 left-0 md:-top-8 md:left-0" fill="white" />
+      <Spotlight className="-top-10  left-0 md:-top-8 md:left-0" fill="white" />
+      <div>
       <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
         <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-500 to-neutral-900 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
-          Our Principles
+          How we work
         </h1>
         <p className="mx-6 mt-6 text-center text-lg font-normal text-neutral-950 md:text-xl lg:mx-10">
-          We are guided by a set of core principles that define who we are and what we stand for. These principles ensure that we never lose sight of our mission and remain dedicated to serving our clients. First, we adopt a client-centric approach where your goals become our goals. We represent your voice, your needs, and your investment objectives in every decision we make, prioritizing your interests above all else.
+        We help you diversify your portfolio.Our team is filled with experts in their fields.We deliver one of a kind service to clients from every market conditions .
+Whether you are looking to enhance your portfolio or just trying to plan for the future ,we are ready to guide you.
+Our thorough knowledge of international investment options will create and maintain wealth for generations to come
         </p>
       </div>
+      {/* Our Vision Section */}
+      <div className="relative z-10 mx-auto w-full  p-4 pt-10">
+        <h2 className="text-center text-3xl font-bold text-neutral-900 mb-4">Our Vision</h2>
+        <p className="mx-6 text-center text-lg font-normal text-neutral-950 md:text-xl lg:mx-10   justify-center">
+          As an independent Investment management firm, BKM GLOBAL is dedicated to providing unbiased financial advice to our clients. Our goal is to create guidance that will enhance your financial future through a range of wealth management services, portfolio management, financial planning, and accounting services Since there is no plan which will work for everyone, our team creates unique management objectives for each of our clients.
+        </p>
+      </div>
+      </div>
+    
     </div>
   );
 }

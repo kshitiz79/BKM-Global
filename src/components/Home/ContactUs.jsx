@@ -21,7 +21,7 @@ export default function ContactSection() {
     street: '408, 1st Floor, 1st C Main, Koramangala 7th Block',
     city: 'Bangalore',
     stateZip: 'Bangalore - 560095, Karnataka, India',
-    email: 'info@bkmglobal.in',
+    email: 'support@bkmglobal.in', // updated email
     phone1: '+91 9740633154',
   };
 
@@ -98,7 +98,7 @@ export default function ContactSection() {
             </div>
             <div className="grid grid-cols-2 gap-3 mt-54">
               <a
-                href={`tel:${office.phone1}`}
+                href={`tel:${office.phone1.replace(/\D/g, '')}`}
                 className="flex items-center justify-center gap-2 bg-blue-900 text-white text-sm font-medium px-4 py-3 rounded-xl hover:bg-blue-800 transition"
               >
                 <Phone className="w-4 h-4" />

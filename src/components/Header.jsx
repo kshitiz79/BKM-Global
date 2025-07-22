@@ -126,7 +126,7 @@ function Navbar({ className }) {
                   title="Investment Management"
                   href="/services-page/fund-management"
                   src="/fund-mang.png"
-                  description="Comprehensive Asset Management Solutions"
+                  description="Comprehensive Fund Management Solutions"
                 />
                 <ProductItem
                   title="Market Alerts"
@@ -179,7 +179,7 @@ function Navbar({ className }) {
                 title="Fund Management"
                 href="/services-page/fund-management"
                 src="/fund-mang.png"
-                description="Comprehensive Asset Management Solutions"
+                description="Comprehensive Fund Management Solutions"
               />
               <ProductItem
                 title="Market Alerts"

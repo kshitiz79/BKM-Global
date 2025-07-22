@@ -29,6 +29,12 @@ export function ShootingStarsAndStarsBackgroundDemo() {
         "We believe in the power of uplearning outdated practices and embracing new strategies to achieve financial success.",
       link: "",
     },
+    {
+      title: "Algo Trading Software",
+      description:
+        "Algo trading involves creating and implementing a predefined set of rules and instructions that automate the trading process, eliminating the need for manual intervention.",
+      link: "",
+    },
   ];
 
   return (
