@@ -39,7 +39,7 @@ const ContactsPage = () => {
         ...(filters.source !== 'all' && { source: filters.source })
       });
 
-      const response = await fetch(`http://localhost:8000/api/contact?${queryParams}`);
+      const response = await fetch(`https://bkm-backed.onrender.com/api/contact?${queryParams}`);
       const result = await response.json();
 
       if (result.success) {
@@ -69,7 +69,7 @@ const ContactsPage = () => {
 
   const handleStatusUpdate = async (contactId, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/contact/${contactId}/status`, {
+      const response = await fetch(`https://bkm-backed.onrender.com/api/contact/${contactId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

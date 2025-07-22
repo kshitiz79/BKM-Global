@@ -16,7 +16,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:8000/api/contact', {
+      const response = await fetch('https://bkm-backed.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

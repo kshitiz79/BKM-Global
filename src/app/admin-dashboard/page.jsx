@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const fetchContacts = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/contact?limit=100');
+      const response = await fetch('https://bkm-backed.onrender.com/api/contact?limit=100');
       const result = await response.json();
       if (result.success) {
         setContacts(result.data);
