@@ -1,5 +1,6 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Doughnut, Bar, Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -13,6 +14,7 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
+import { FaEnvelope, FaUsers, FaChartLine, FaTicketAlt } from 'react-icons/fa';
 
 // Register Chart.js components
 ChartJS.register(
@@ -28,13 +30,55 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  // Data for Donut Chart: User Status Distribution
-  const userStatusData = {
-    labels: ['Active', 'Inactive'],
+  const [contacts, setContacts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  // Check authentication
+  useEffect(() => {
+    const token = localStorage.getItem('adminToken');
+    if (!token) {
+      router.push('/admin');
+      return;
+    }
+    fetchContacts();
+  }, []);
+
+  const fetchContacts = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/api/contact?limit=100');
+      const result = await response.json();
+      if (result.success) {
+        setContacts(result.data);
+      }
+    } catch (error) {
+      console.error('Fetch contacts error:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Calculate contact stats
+  const contactStats = {
+    total: contacts.length,
+    new: contacts.filter(c => c.status === 'new').length,
+    inProgress: contacts.filter(c => c.status === 'in-progress').length,
+    resolved: contacts.filter(c => c.status === 'resolved').length,
+    fromHome: contacts.filter(c => c.source === 'home-page').length,
+    fromContact: contacts.filter(c => c.source === 'contact-page').length,
+  };
+  // Data for Donut Chart: Contact Status Distribution
+  const contactStatusData = {
+    labels: ['New', 'In Progress', 'Resolved', 'Closed'],
     datasets: [
       {
-        data: [3, 1],
-        backgroundColor: ['#FF6B6B', '#4ECDC4'],
+        data: [
+          contactStats.new,
+          contactStats.inProgress,
+          contactStats.resolved,
+          contacts.filter(c => c.status === 'closed').length
+        ],
+        backgroundColor: ['#3B82F6', '#F59E0B', '#10B981', '#6B7280'],
         borderWidth: 0,
       },
     ],
@@ -116,139 +160,64 @@ const Dashboard = () => {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-3 gap-6">
-        <div className="bg-gradient-to-r from-green-400 to-green-500 text-white rounded-lg p-6">
-          <h3 className="text-lg font-semibold">Total Users</h3>
-          <p className="text-3xl font-bold">4</p>
+      <div className="grid grid-cols-4 gap-6">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold">Total Contacts</h3>
+              <p className="text-3xl font-bold">{contactStats.total}</p>
+            </div>
+            <FaEnvelope className="w-8 h-8 opacity-80" />
+          </div>
         </div>
-        <div className="bg-gradient-to-r from-green-400 to-green-500 text-white rounded-lg p-6">
-          <h3 className="text-lg font-semibold">Total Funds Invested</h3>
-          <p className="text-3xl font-bold">$23,000</p>
+        <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-lg p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold">New Inquiries</h3>
+              <p className="text-3xl font-bold">{contactStats.new}</p>
+            </div>
+            <FaTicketAlt className="w-8 h-8 opacity-80" />
+          </div>
         </div>
-        <div className="bg-gradient-to-r from-green-400 to-green-500 text-white rounded-lg p-6">
-          <h3 className="text-lg font-semibold">Active Tickets</h3>
-          <p className="text-3xl font-bold">2</p>
+        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold">Resolved</h3>
+              <p className="text-3xl font-bold">{contactStats.resolved}</p>
+            </div>
+            <FaChartLine className="w-8 h-8 opacity-80" />
+          </div>
+        </div>
+        <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-semibold">From Home Page</h3>
+              <p className="text-3xl font-bold">{contactStats.fromHome}</p>
+            </div>
+            <FaUsers className="w-8 h-8 opacity-80" />
+          </div>
         </div>
       </div>
 
       {/* Charts Section */}
       <div className="grid grid-cols-3 gap-6">
-        {/* Donut Chart: User Status Distribution */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-4">User Status Distribution</h3>
-          <div className="relative h-48">
-            <Doughnut data={userStatusData} options={userStatusOptions} />
-          </div>
-          <p className="text-center text-blue-800 font-semibold mt-4">75% Active</p>
-        </div>
+        {/* Donut Chart: Contact Status Distribution */}
+ 
 
         {/* Progress Circles */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-green-800 mb-4">Key Metrics</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="text-center">
-              <div className="relative w-24 h-24 mx-auto">
-                <svg className="w-full h-full" viewBox="0 0 36 36">
-                  <path
-                    className="text-gray-200"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="text-blue-500"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 11.291 4.691 a 15.9155 15.9155 0 0 1 4.691 11.291"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeDasharray="80 100"
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-blue-800 font-semibold">80%</span>
-                </div>
-              </div>
-              <p className="text-blue-800 mt-2">Deposit Completion</p>
-            </div>
-            <div className="text-center">
-              <div className="relative w-24 h-24 mx-auto">
-                <svg className="w-full h-full" viewBox="0 0 36 36">
-                  <path
-                    className="text-gray-200"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="text-blue-500"
-                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 11.291 4.691 a 15.9155 15.9155 0 0 1 4.691 11.291"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeDasharray="75 100"
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-blue-800 font-semibold">75%</span>
-                </div>
-              </div>
-              <p className="text-blue-800 mt-2">Withdrawal Completion</p>
-            </div>
-            <div className="text-center col-span-2">
-              <p className="text-blue-800 font-semibold">$587.50</p>
-              <p className="text-blue-800">Avg. Profit/Loss</p>
-            </div>
-          </div>
-        </div>
+       
 
         {/* Bar Chart: Monthly Deposits */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-4">Monthly Deposits</h3>
-          <div className="relative h-48">
-            <Bar data={monthlyDepositsData} options={monthlyDepositsOptions} />
-          </div>
-        </div>
+       
       </div>
 
       {/* Line Graph and Ticket Categories */}
       <div className="grid grid-cols-3 gap-6">
         {/* Line Graph: Total Funds Invested Over Time */}
-        <div className="col-span-2 bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-4">Total Funds Invested Over Time</h3>
-          <div className="relative h-48">
-            <Line data={fundsInvestedData} options={fundsInvestedOptions} />
-          </div>
-        </div>
+       
 
-        {/* Ticket Categories */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-blue-800 mb-4">Ticket Categories</h3>
-          <ul className="space-y-4">
-            <li className="flex items-center justify-between">
-              <div className="flex items-center">
-                <span className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">💰</span>
-                <span>Deposit Issues</span>
-              </div>
-              <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">2</span>
-            </li>
-            <li className="flex items-center justify-between">
-              <div className="flex items-center">
-                <span className="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center mr-3">🏦</span>
-                <span>Withdrawal Issues</span>
-              </div>
-              <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">1</span>
-            </li>
-            <li className="flex items-center justify-between">
-              <div className="flex items-center">
-                <span className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">👤</span>
-                <span>Account Issues</span>
-              </div>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">1</span>
-            </li>
-          </ul>
-        </div>
+        {/* Contact Sources */}
+      
       </div>
     </div>
   );

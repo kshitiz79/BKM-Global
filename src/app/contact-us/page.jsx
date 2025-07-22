@@ -26,21 +26,40 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Contact Form Data:', formData);
-      alert('Thank you for reaching out! We will get back to you within 24 hours.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        service: '',
-        message: '',
+
+    try {
+      const response = await fetch('http://localhost:8000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'contact-page'
+        }),
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Thank you for reaching out! We will get back to you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          service: '',
+          message: '',
+        });
+      } else {
+        alert(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Failed to submit form. Please try again later.');
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -95,7 +114,7 @@ const ContactUs = () => {
           <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -352,26 +371,26 @@ const ContactUs = () => {
 
       {/* Map Section (Optional - you can add Google Maps integration here) */}
       <section className="py-16 px-6 md:px-20 bg-gray-50">
-  <div className=" text-center">
-    <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
-    <p className="text-gray-600 mb-8">
-      Located in the heart of Bangalore's tech hub, Electronic City Phase 1
-    </p>
-    <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-      <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62228.30224653803!2d77.63505434042516!3d12.841858899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6cde204c3f9b%3A0x49cf9469a92db66e!2sElectronic%20City%20Phase%201%2C%20Bengaluru%2C%20Karnataka%20560100%2C%20India!5e0!3m2!1sen!2sin!4v1721643810217!5m2!1sen!2sin"
-          width="100%"
-          height="60%"
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="w-full h-full"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-</section>
+        <div className=" text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
+          <p className="text-gray-600 mb-8">
+            Located in the heart of Bangalore's tech hub, Electronic City Phase 1
+          </p>
+          <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62228.30224653803!2d77.63505434042516!3d12.841858899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6cde204c3f9b%3A0x49cf9469a92db66e!2sElectronic%20City%20Phase%201%2C%20Bengaluru%2C%20Karnataka%20560100%2C%20India!5e0!3m2!1sen!2sin!4v1721643810217!5m2!1sen!2sin"
+                width="100%"
+                height="60%"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

@@ -5,14 +5,46 @@ import { MapPin, Mail, Phone, MessageSquare } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', number: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('http://localhost:8000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.number,
+          subject: 'Contact from Home Page',
+          message: formData.message,
+          source: 'home-page'
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert('Thank you for reaching out! We will get back to you within 24 hours.');
+        setFormData({ name: '', email: '', number: '', message: '' });
+      } else {
+        alert(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('Failed to submit form. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const office = {
@@ -59,9 +91,17 @@ export default function ContactSection() {
               ))}
               <button
                 type="submit"
-                className="w-full bg-blue-900 text-white py-3 px-6 rounded-xl hover:bg-blue-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-blue-900 text-white py-3 px-6 rounded-xl hover:bg-blue-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
