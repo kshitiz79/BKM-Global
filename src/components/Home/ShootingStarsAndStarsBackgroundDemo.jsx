@@ -66,7 +66,7 @@ and automation, enhancing trading efficiency and reducing human error
       </div>
 
       {/* Hover Cards */}
-      <div className="relative z-10 max-w-6xl mx-auto mt-4 text-lg">
+      <div className="relative z-10 max-w-7xl mx-auto mt-4 text-lg">
         <HoverEffect items={projects} />
       </div>
     </div>

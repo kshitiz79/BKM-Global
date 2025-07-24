@@ -126,7 +126,7 @@ const ContactUs = () => {
               Get In Touch
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Contact <span className="text-blue-600">BKM Global</span>
+              Contact <span className="text-blue-900">BKM Global</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Ready to transform your trading journey? Our expert team is here to help you achieve your financial goals with personalized solutions and professional guidance.
@@ -147,7 +147,7 @@ const ContactUs = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2"
               >
-                <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-blue-900 mb-4 group-hover:scale-110 transition-transform duration-300">
                   {info.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{info.title}</h3>
@@ -213,7 +213,7 @@ const ContactUs = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email"
-                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300"
                       required
                     />
                   </div>
@@ -230,7 +230,7 @@ const ContactUs = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 9876543210"
-                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300"
                       required
                     />
                   </div>
@@ -243,7 +243,7 @@ const ContactUs = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -263,7 +263,7 @@ const ContactUs = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="What's this about?"
-                    className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300"
                     required
                   />
                 </div>
@@ -278,7 +278,7 @@ const ContactUs = () => {
                     onChange={handleChange}
                     placeholder="Tell us more about your requirements..."
                     rows={5}
-                    className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full p-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300 resize-none"
                     required
                   />
                 </div>
@@ -286,7 +286,7 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center">
@@ -320,7 +320,7 @@ const ContactUs = () => {
                     "Comprehensive risk management"
                   ].map((item, index) => (
                     <div key={index} className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                      <span className="w-2 h-2 bg-blue-900 rounded-full mr-3"></span>
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -328,7 +328,7 @@ const ContactUs = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl shadow-lg p-8 text-white">
+              <div className="bg-gradient-to-r from-blue-900 to-indigo-600 rounded-3xl shadow-lg p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Connect With Us</h3>
                 <p className="mb-6 opacity-90">
                   Follow us on social media for the latest market insights and updates.

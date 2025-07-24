@@ -19,6 +19,13 @@ const videoData = [
     paragraph:
       "We believe in the power of uplearning outdated practices and embracing new strategies for financial success.",
   },
+
+
+ 
+
+
+
+  
 ];
 
 export default function ScrollVideoStack() {

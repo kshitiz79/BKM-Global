@@ -59,7 +59,7 @@ export function SpotlightPreview() {
       
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-900 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
       </div>
 
@@ -69,11 +69,11 @@ export function SpotlightPreview() {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+              <span className="w-2 h-2 bg-blue-900 rounded-full mr-2"></span>
               Our Approach
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              How We <span className="text-blue-600">Work</span>
+              How We <span className="text-blue-900">Work</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               We help you diversify your portfolio with expert guidance and innovative solutions. Our team of specialists delivers exceptional service across all market conditions, ensuring your financial success through every phase of your investment journey.
@@ -84,7 +84,7 @@ export function SpotlightPreview() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -97,7 +97,7 @@ export function SpotlightPreview() {
                 key={index}
                 className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-2"
               >
-                <div className="text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-blue-900 mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
@@ -113,7 +113,7 @@ export function SpotlightPreview() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Our <span className="text-blue-600">Vision</span>
+                  Our <span className="text-blue-900">Vision</span>
                 </h2>
                 <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                   <p>
