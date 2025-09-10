@@ -58,17 +58,17 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="relative bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <h1 className="h1-blue-900 text-center mb-12">Contact Us</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full">
+    <div className="relative bg-white py-12 sm:py-16 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <h1 className="h1-blue-900 text-center mb-8 sm:mb-10 md:mb-12">Contact Us</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
 
           {/* Contact Form */}
-          <div className="shadow-2xl rounded-2xl py-10 px-8 transform hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br from-white to-blue-50">
-            <h2 className="h2-blue-900 mb-8 text-center uppercase tracking-wide bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
+          <div className="shadow-2xl rounded-2xl py-8 sm:py-10 px-6 sm:px-8 transform hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br from-white to-blue-50">
+            <h2 className="h2-blue-900 mb-6 sm:mb-8 text-center uppercase tracking-wide bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent">
               Get in Touch
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               {['name', 'email', 'number', 'message'].map((field) => (
                 <div className="relative" key={field}>
                   {field !== 'message' ? (
@@ -76,14 +76,14 @@ export default function ContactSection() {
                       type={field === 'email' ? 'email' : field === 'number' ? 'tel' : 'text'}
                       name={field}
                       placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
-                      className="form-input-blue-900"
+                      className="form-input-blue-900 w-full"
                       onChange={handleChange}
                     />
                   ) : (
                     <textarea
                       name="message"
                       placeholder="Your Message"
-                      className="form-textarea-blue-900"
+                      className="form-textarea-blue-900 w-full"
                       onChange={handleChange}
                     ></textarea>
                   )}
@@ -108,10 +108,10 @@ export default function ContactSection() {
 
           {/* Office Section Card */}
           <div className="max-w-sm w-full bg-white shadow-xl rounded-2xl border border-blue-100 p-6 mx-auto blue-900-text font-sans">
-            <h2 className="text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
+            <h2 className="text-lg sm:text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
               Our Office Details
               <span className="absolute right-0 top-0 opacity-10">
-                <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M10 20h4v10H4V20H8v-6a8 8 0 0116 0v6h4v10H20V20h-4v-6a4 4 0 00-8 0v6z" />
                 </svg>
               </span>
@@ -136,7 +136,7 @@ export default function ContactSection() {
                 {office.phone1}
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-3 mt-54">
+            <div className="grid grid-cols-2 gap-3 mt-52">
               <a
                 href={`tel:${office.phone1.replace(/\D/g, '')}`}
                 className="btn-blue-900"
@@ -155,9 +155,9 @@ export default function ContactSection() {
           </div>
 
           {/* Map Section */}
-          <div className="bg-white shadow-xl rounded-2xl py-8 px-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white shadow-xl rounded-2xl py-6 sm:py-8 px-6 sm:px-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
             <h3 className="h3-blue-900 mb-4">Find Us Here</h3>
-            <div className="w-full h-64 rounded-lg overflow-hidden shadow-md relative">
+            <div className="w-full h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden shadow-md relative">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2171775044056!2d77.62264807412218!3d12.935171087379098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1454d1b2b317%3A0xb4e0b61cb7ce1aa7!2s408%2C%20Cita%20Building%2C%201st%20Floor%2C%201st%20C%20Main%2C%207th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095%2C%20India!5e0!3m2!1sen!2sin!4v1720504731390!5m2!1sen!2sin"
                 width="100%"
@@ -172,7 +172,7 @@ export default function ContactSection() {
               Visit us at our head office in Koramangala, Bengaluru!
             </p>
             <a href="https://www.google.com/maps/place/Cita+building/@12.9350918,77.5716018,13z/data=!4m6!3m5!1s0x3bae15f26ddf5899:0xf1138ec27b8e0c77!8m2!3d12.935095!4d77.6128016!16s%2Fg%2F11t7ky79dg?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D">
-              <button className="mt-4 btn-blue-900">
+              <button className="mt-16 btn-blue-900">
                 Get Directions
               </button>
             </a>

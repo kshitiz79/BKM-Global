@@ -31,7 +31,7 @@ const Section4 = () => {
               By providing clear, data-driven insights into market trends and opportunities, Market Alerts streamline decision-making processes. Investors can quickly assess market conditions and make informed decisions on when to buy, sell, or hold securities, reducing the emotional aspect of trading.
             </p>
             <div className="mt-6 pt-6 border-t border-gray-100">
-              <div className="flex items-center text-sm text-blue-600 font-semibold">
+              <div className="flex items-center text-sm text-[#1A3A8D] font-semibold">
                 <span>Reduce emotional trading by 80%</span>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Section4 = () => {
               Automating market analysis through Market alerts saves investors valuable time. Instead of manually analyzing vast amounts of market data, investors can rely on signals to highlight potential opportunities and risks, allowing them to focus on strategy implementation and portfolio management.
             </p>
             <div className="mt-6 pt-6 border-t border-gray-100">
-              <div className="flex items-center text-sm text-blue-600 font-semibold">
+              <div className="flex items-center text-sm text-[#1A3A8D] font-semibold">
                 <span>Save 5+ hours daily on analysis</span>
               </div>
             </div>
@@ -75,7 +75,7 @@ const Section4 = () => {
               Market Alerts play a crucial role in portfolio management by optimizing asset allocations and introducing new opportunities. By diversifying signal sources and aligning signals with specific investment goals and risk tolerances, investors can effectively manage portfolio performance and reduce overall investment risk.
             </p>
             <div className="mt-6 pt-6 border-t border-gray-100">
-              <div className="flex items-center text-sm text-blue-600 font-semibold">
+              <div className="flex items-center text-sm text-[#1A3A8D] font-semibold">
                 <span>Optimize portfolio performance by 40%</span>
               </div>
             </div>

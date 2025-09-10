@@ -19,19 +19,12 @@ const videoData = [
     paragraph:
       "We believe in the power of uplearning outdated practices and embracing new strategies for financial success.",
   },
-
-
- 
-
-
-
-  
 ];
 
 export default function ScrollVideoStack() {
   return (
     <div className="bg-white relative w-full">
-      <h1 className="text-5xl md:text-5xl font-bold text-black text-center pt-12 mb-4">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black text-center pt-8 sm:pt-10 md:pt-12 mb-4">
         Our Services
       </h1>
 
@@ -42,7 +35,7 @@ export default function ScrollVideoStack() {
             className="sticky top-0 h-screen flex items-center justify-center"
             style={{ zIndex: index + 1 }}
           >
-            <div className="relative max-w-6xl w-full h-[60vh] rounded-xl shadow-xl overflow-hidden">
+            <div className="relative w-[90%] sm:w-[85%] md:w-[80%] max-w-6xl h-[50vh] sm:h-[55vh] md:h-[60vh] rounded-xl shadow-xl overflow-hidden">
               <video
                 src={video.src}
                 autoPlay
@@ -53,12 +46,12 @@ export default function ScrollVideoStack() {
               />
 
               {/* Top-left heading */}
-              <div className="absolute top-4 left-6 text-white text-3xl md:text-5xl font-bold drop-shadow-lg">
+              <div className="absolute top-3 sm:top-4 left-4 sm:left-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-lg">
                 {video.heading}
               </div>
 
               {/* Bottom-left paragraph */}
-              <div className="absolute bottom-6 left-6 text-white text-sm md:text-2xl max-w-md drop-shadow-md">
+              <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-6 text-white text-xs sm:text-sm md:text-base lg:text-xl max-w-[80%] sm:max-w-md drop-shadow-md">
                 {video.paragraph}
               </div>
             </div>

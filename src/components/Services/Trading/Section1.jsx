@@ -26,19 +26,19 @@ export function Section1() {
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Alert System Features</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-[#1A3A8D] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   Real-time market monitoring and analysis
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-[#1A3A8D] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   Multi-timeframe signal generation
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-[#1A3A8D] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   Risk-reward ratio optimization
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-[#1A3A8D] rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   Instant notifications via multiple channels
                 </li>
               </ul>
@@ -54,7 +54,7 @@ export function Section1() {
               className="w-full h-auto rounded-2xl shadow-xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-200">
-              <div className="text-2xl font-bold text-blue-600">95%</div>
+              <div className="text-2xl font-bold text-[#1A3A8D]">95%</div>
               <div className="text-sm text-gray-600">Success Rate</div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export function Section1() {
         {/* Alert Types */}
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="text-blue-600 mb-4">
+            <div className="text-[#1A3A8D] mb-4">
               <FaChartLine className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Technical Analysis</h3>
@@ -71,7 +71,7 @@ export function Section1() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="text-blue-600 mb-4">
+            <div className="text-[#1A3A8D] mb-4">
               <FaRobot className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Algorithmic Signals</h3>
@@ -79,7 +79,7 @@ export function Section1() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-            <div className="text-blue-600 mb-4">
+            <div className="text-[#1A3A8D] mb-4">
               <FaNewspaper className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">Fundamental Analysis</h3>

@@ -107,7 +107,7 @@ export function Section3() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+        <div className="mt-16 text-center bg-gradient-to-r from-[#1A3A8D] to-[#1A3A8D] rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Start Your Investment Journey?</h3>
           <p className="text-xl mb-8 opacity-90">
             Let our expert team help you achieve your financial goals with personalized investment management solutions.

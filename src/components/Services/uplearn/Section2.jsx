@@ -94,7 +94,7 @@ export function Section2() {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-blue-950 rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Trading Skills?</h3>
           <p className="text-xl mb-8 opacity-90">
             Join thousands of successful traders who have upgraded their skills through our UpLearn program.

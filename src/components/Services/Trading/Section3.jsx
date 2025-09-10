@@ -18,7 +18,7 @@ export default function Section3() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Technical Indicators */}
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-2">
-            <div className="text-6xl text-blue-600 mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-6xl text-[#1A3A8D] mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
               <TbChartCandle />
             </div>
             <h2 className="text-2xl font-semibold mb-4 text-gray-900 text-center">Technical Indicators</h2>
@@ -28,14 +28,14 @@ export default function Section3() {
             <div className="mt-6 pt-6 border-t border-gray-100">
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <span>Accuracy Rate</span>
-                <span className="font-semibold text-blue-600">92%</span>
+                <span className="font-semibold text-[#1A3A8D]">92%</span>
               </div>
             </div>
           </div>
 
           {/* Algorithmic Signals */}
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-2">
-            <div className="text-6xl text-blue-600 mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-6xl text-[#1A3A8D] mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
               <FaMoneyBillWave />
             </div>
             <h2 className="text-2xl font-semibold mb-4 text-gray-900 text-center">Algorithmic Signals</h2>
@@ -45,14 +45,14 @@ export default function Section3() {
             <div className="mt-6 pt-6 border-t border-gray-100">
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <span>Processing Speed</span>
-                <span className="font-semibold text-blue-600">Real-time</span>
+                <span className="font-semibold text-[#1A3A8D]">Real-time</span>
               </div>
             </div>
           </div>
 
           {/* Fundamental Analysis */}
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-2">
-            <div className="text-6xl text-blue-600 mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="text-6xl text-[#1A3A8D] mx-auto mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
               <FaRegSmile />
             </div>
             <h2 className="text-2xl font-semibold mb-4 text-gray-900 text-center">Fundamental Analysis</h2>
@@ -62,23 +62,23 @@ export default function Section3() {
             <div className="mt-6 pt-6 border-t border-gray-100">
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <span>Market Coverage</span>
-                <span className="font-semibold text-blue-600">Global</span>
+                <span className="font-semibold text-[#1A3A8D]">Global</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-blue-600 rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Receive Professional Trading Signals?</h3>
           <p className="text-xl mb-8 opacity-90">
             Join thousands of successful traders who trust our signals for consistent profits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <button className="bg-white text-[#1A3A8D] px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
               Start Free Trial
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+            <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3A8D] transition-all duration-300">
               View Pricing Plans
             </button>
           </div>
@@ -88,7 +88,7 @@ export default function Section3() {
       {/* WhatsApp Floating Icon */}
       <a
         href="https://wa.me/9740633154"
-        className="fixed bottom-6 right-6 bg-blue-600 p-3 rounded-full shadow-lg hover:scale-105 transition z-50"
+        className="fixed bottom-6 right-6 bg-[#1A3A8D] p-3 rounded-full shadow-lg hover:scale-105 transition z-50"
         target="_blank"
         rel="noopener noreferrer"
       >

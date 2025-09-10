@@ -46,7 +46,7 @@ export function Section3() {
             <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-xl p-8 border border-gray-100 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-[#1A3A8D] transition-colors duration-300">
                     <FaCheck className="w-4 h-4 text-blue-600 group-hover:text-white transition-colors duration-300" />
                   </div>
                 </div>

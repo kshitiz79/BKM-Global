@@ -83,7 +83,7 @@ const Section5 = () => {
               <div className="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-600">Model Updates</span>
-                  <span className="font-semibold text-indigo-600">Weekly</span>
+                  <span className="font-semibold text-[#1A3A8D]">Weekly</span>
                 </div>
               </div>
             </div>
@@ -91,16 +91,16 @@ const Section5 = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+        <div className="mt-16 text-center bg-gradient-to-r from-[#1A3A8D] to-[#1A3A8D] rounded-3xl p-12 text-white">
           <h3 className="text-3xl font-bold mb-4">Experience the Power of Professional Trading Signals</h3>
           <p className="text-xl mb-8 opacity-90">
             Join our community of successful traders and start receiving high-quality market alerts today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+            <button className="bg-white text-[#1A3A8D] px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
               Start Your Free Trial
             </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
+            <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-[#1A3A8D] transition-all duration-300">
               Contact Our Experts
             </button>
           </div>

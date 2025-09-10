@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ShootingStars } from "./../../ui/shooting-star";
@@ -38,21 +38,13 @@ export function ShootingStarsAndStarsBackgroundDemo() {
   ];
 
   return (
-
-
-
-    <div
-
-
-  className="app-container top-0 sticky relative w-full mx-auto overflow-hidden rounded-t-4xl bg-white shadow-2xl py-12 px-4 sm:px-6 md:px-12 "
->
-
+    <div className="app-container top-0 sticky relative w-full mx-auto overflow-hidden rounded-t-4xl bg-white shadow-2xl py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-12">
       {/* Heading and description */}
       <div className="relative z-10 flex flex-col justify-center max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl  text-black text-left max-w-6xl mx-auto">
-          <span className="text-blue-900 font-md">BKM Global</span>:  Comprehensive global trading solutions
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black text-left max-w-6xl mx-auto">
+          <span className="text-blue-900 font-md">BKM Global</span>: Comprehensive global trading solutions
         </h2>
-        <p className="text-base sm:text-lg md:text-xl mt-4 text-black text-left max-w-6xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg mt-3 sm:mt-4 text-black text-left max-w-6xl mx-auto">
         At BKM Global, We live and breathe the markets. Since 2009, we've educated traders to help them learn about the markets.
 We provide solutions to different types of worldwide trading problems in best way possible.Our Algo trading offers precision, speed,
 and automation, enhancing trading efficiency and reducing human error
@@ -66,10 +58,9 @@ and automation, enhancing trading efficiency and reducing human error
       </div>
 
       {/* Hover Cards */}
-      <div className="relative z-10 max-w-7xl mx-auto mt-4 text-lg">
+      <div className="relative z-10 max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-10 text-base">
         <HoverEffect items={projects} />
       </div>
     </div>
-
   );
 }

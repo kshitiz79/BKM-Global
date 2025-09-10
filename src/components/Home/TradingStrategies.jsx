@@ -80,11 +80,11 @@ export default function TradingStrategyCards() {
       y: {
         beginAtZero: true,
         grid: { color: "#e5e7eb" },
-        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
+        ticks: { color: "#111827", font: { size: 10, weight: "500" } },
       },
       x: {
         grid: { color: "#e5e7eb" },
-        ticks: { color: "#111827", font: { size: 12, weight: "500" } },
+        ticks: { color: "#111827", font: { size: 10, weight: "500" } },
       },
     },
     plugins: {
@@ -95,6 +95,8 @@ export default function TradingStrategyCards() {
         bodyColor: "#ffffff",
         borderColor: "#e5e7eb",
         borderWidth: 1,
+        titleFont: { size: 12 },
+        bodyFont: { size: 11 },
       },
     },
   };
@@ -111,11 +113,11 @@ export default function TradingStrategyCards() {
   ];
 
   return (
-    <div className="relative bg-gradient-to-b from-white to-gray-50 text-black py-20">
-      <h1 className="md:text-5xl text-4xl text-center font-bold text-gray-900 mb-12 tracking-tight">
+    <div className="relative bg-gradient-to-b from-white to-gray-50 text-black py-12 sm:py-16 md:py-20">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl text-center font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12 tracking-tight">
         Explore Trading Strategies
       </h1>
-      <div className="grid grid-cols-1 max-w-7xl px-8 mx-auto gap-8 p-4">
+      <div className="grid grid-cols-1 max-w-7xl px-4 sm:px-6 md:px-8 mx-auto gap-6 sm:gap-7 md:gap-8 p-4">
         {strategies.map((strategy, i) => (
           <motion.div
             key={strategy.title}
@@ -124,15 +126,15 @@ export default function TradingStrategyCards() {
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-white rounded-xl  p-6 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+            className="bg-white rounded-xl p-4 sm:p-5 md:p-6 flex flex-col border border-gray-200 hover:shadow-lg transition-shadow duration-300"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
               {strategy.title}
             </h2>
-            <p className="text-gray-700 text-base mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
               {strategy.description}
             </p>
-            <div className="relative h-78 mb-4">
+            <div className="relative h-48 sm:h-56 md:h-64 mb-3 sm:mb-4">
               <Line data={strategy.chartData} options={options} />
             </div>
            
