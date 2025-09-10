@@ -26,7 +26,7 @@ export const MenuItem = ({ setActive, active, item, href = "#", children }) => {
         <motion.p
           transition={{ duration: 0.3 }}
           className={`cursor-pointer px-2 py-1 rounded-md text-black dark:text-white hover:opacity-[0.9] ${
-            isActive ? "font-semibold underline text-blue-900" : ""
+            isActive ? "font-semibold underline blue-900-text" : ""
           }`}
         >
           {item}
@@ -86,7 +86,7 @@ export const ProductItem = ({ title, description, href, src }) => {
 
 export const HoveredLink = ({ children, ...rest }) => {
   return (
-    <Link {...rest} className="text-neutral-700 dark:text-neutral-200 hover:text-black">
+    <Link {...rest} className="text-neutral-700 dark:text-neutral-200 hover:text-black blue-900-text">
       {children}
     </Link>
   );

@@ -4,32 +4,32 @@ import Image from "next/image";
 export default function BlockchainHero() {
   return (
     <section
-      className="sticky top-25 relative bg-no-repeat bg-cover bg-center h-[88vh]  "
+      className="sticky top-25 relative bg-no-repeat bg-cover bg-center h-[88vh]"
       style={{
         backgroundImage: "url('/blockchain_hero_bg.png')",
       }}
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
         {/* Left Content */}
-        <div className="relative w-3/4 overflow-hidden bg-black/20 rounded-br-full">
+        <div className="relative w-3/4 overflow-hidden bg-blue-900/20 rounded-br-full">
   {/* Background Video */}
   <video
     autoPlay
     muted
     loop
     playsInline
-    className="absolute top-0 left-0 w-full h-[100vh] object-cover z-0 "
+    className="absolute top-0 left-0 w-full h-[100vh] object-cover z-0"
   >
     <source src="/bkm.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   {/* Overlay (optional for better text readability) */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-10"></div>
+  <div className="absolute top-0 left-0 w-full h-full bg-blue-900/20 z-10"></div>
 
   {/* Text Content */}
   <div className="relative z-20 px-6 lg:px-16 py-20 w-full text-white">
-    <h1 className=" text-[3rem] leading-tight mb-8 max-w-7xl uppercase font-bold ">
+    <h1 className="text-[3rem] leading-tight mb-8 max-w-7xl uppercase font-bold">
     Unlocking the Future of Financial Trading with Next-Generation Algo Software
     </h1>
     <p className="text-[1.3rem] mb-10 leading-relaxed">

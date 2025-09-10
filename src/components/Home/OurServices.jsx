@@ -37,7 +37,7 @@ export default function OlympTradeFeatures() {
     <section className="relative bg-white text-black pb-20 px-8 md:px-16">
       <div className="max-w-7xl mx-auto px-10">
         <h2 className="text-center text-4xl md:text-5xl font-bold mb-16 leading-tight">
-          <span className="text-blue-900">Why</span> Traders Prefer BKM GLOBALS
+          <span className="blue-900-text">Why</span> Traders Prefer BKM GLOBALS
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">

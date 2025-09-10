@@ -111,8 +111,8 @@ const ContactUs = () => {
       <section className="relative py-20 px-6 md:px-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-72 h-72 bg-[#1A3A8D] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#1A3A8D] rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center">
@@ -328,7 +328,7 @@ const ContactUs = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-gradient-to-r from-blue-900 to-indigo-600 rounded-3xl shadow-lg p-8 text-white">
+              <div className="bg-gradient-to-r from-blue-900 to-[#1A3A8D] rounded-3xl shadow-lg p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Connect With Us</h3>
                 <p className="mb-6 opacity-90">
                   Follow us on social media for the latest market insights and updates.

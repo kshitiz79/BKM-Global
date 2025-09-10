@@ -60,7 +60,7 @@ export function SpotlightPreview() {
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-900 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#1A3A8D] rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 w-full">
@@ -141,7 +141,7 @@ export function SpotlightPreview() {
               </div>
 
               <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-12 text-white shadow-2xl">
+                <div className="bg-gradient-to-br from-[#1A3A8D]  to-[#1A3A8D] rounded-3xl p-12 text-white shadow-2xl">
                   <h3 className="text-2xl font-bold mb-6">Our Commitment</h3>
                   <div className="space-y-4">
                     <div className="flex items-start">
@@ -169,8 +169,8 @@ export function SpotlightPreview() {
                 </div>
                 
                 {/* Floating Elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-600 rounded-2xl opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-indigo-600 rounded-full opacity-20 animate-pulse delay-1000"></div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#1A3A8D]  rounded-2xl opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#1A3A8D] rounded-full opacity-20 animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>

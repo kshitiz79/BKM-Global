@@ -30,7 +30,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold text-gray-900 mb-4"
+            className="h2-blue-900 mb-4"
           >
             Our Services
           </motion.h2>
@@ -45,10 +45,10 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white dark:bg-white p-8 rounded-xl shadow-lg  transition-all duration-300"
+              className="bg-white dark:bg-white p-8 rounded-xl shadow-lg transition-all duration-300 border border-blue-100 hover:border-blue-300"
             >
               <div className="text-5xl mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-2xl font-semibold blue-900-text dark:text-white mb-4">
                 {service.title}
               </h3>
               <p className="text-gray-900 dark:text-gray-900 text-lg leading-relaxed">
@@ -63,9 +63,9 @@ const Services = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="bg-white shadow-md shadow-white dark:bg-neutral-800 rounded-2xl border-2 p-8 md:p-12 max-w-7xl mx-auto"
+          className="bg-blue-50 shadow-md shadow-blue-50 dark:bg-blue-50 rounded-2xl border-2 border-blue-100 p-8 md:p-12 max-w-7xl mx-auto"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-black mb-6">
+          <h2 className="h3-blue-900 mb-6">
             Our Commitment to You
           </h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -83,4 +83,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;
