@@ -8,7 +8,7 @@ export default function Forex() {
       {/* Optional dark overlay */}
      
 
-      <section className="relative z-10 max-w-7xl px-8 mx-auto py-16 flex flex-col md:flex-row gap-10">
+      <section className="relative z-10 md:max-w-7xl px-8 mx-auto py-16 flex flex-col md:flex-row gap-10">
         {/* Left: Video (1/2) */}
         <div className="md:w-1/2 h-[600px] flex items-center">
           <div className="w-full h-full">

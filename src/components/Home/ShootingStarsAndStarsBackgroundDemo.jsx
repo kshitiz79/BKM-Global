@@ -40,7 +40,7 @@ export function ShootingStarsAndStarsBackgroundDemo() {
   return (
     <div className="app-container top-0 sticky relative w-full mx-auto overflow-hidden rounded-t-4xl bg-white shadow-2xl py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-12">
       {/* Heading and description */}
-      <div className="relative z-10 flex flex-col justify-center max-w-7xl mx-auto">
+      <div className="relative z-10 px-3 flex flex-col justify-center max-w-7xl mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-black text-left max-w-6xl mx-auto">
           <span className="text-blue-900 font-md">BKM Global</span>: Comprehensive global trading solutions
         </h2>

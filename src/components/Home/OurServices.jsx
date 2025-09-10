@@ -34,13 +34,13 @@ const features = [
 
 export default function OlympTradeFeatures() {
   return (
-    <section className="relative bg-white text-black pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 md:px-8 lg:px-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-16 leading-tight">
-          <span className="blue-900-text">Why</span> Traders Prefer BKM GLOBALS
+    <section className="relative bg-white text-black pb-20  px-8 md:px-16">
+      <div className="max-w-7xl mx-auto ">
+        <h2 className="text-center text-4xl md:text-5xl font-bold mb-16 leading-tight">
+          <span className="text-blue-900">Why</span> Traders Prefer BKM GLOBALS
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 md:gap-8 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {features.map(({ image, title, description, span }, idx) => (
             <motion.div
               key={idx}
@@ -57,9 +57,9 @@ export default function OlympTradeFeatures() {
                   backgroundPosition: 'center',
                 }}
               />
-              <div className="relative z-10 p-6 sm:p-7 md:p-8 flex flex-col items-center text-center">
-                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-white">{title}</h3>
-                <p className="text-sm sm:text-base leading-relaxed text-gray-200">{description}</p>
+              <div className="relative z-10 p-8 flex flex-col items-center text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-white">{title}</h3>
+                <p className="text-base leading-relaxed text-gray-200">{description}</p>
               </div>
             </motion.div>
           ))}
