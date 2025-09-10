@@ -215,7 +215,7 @@ const ContactUs = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100"
+              className="bg-white rounded-3xl shadow-sm p-8 md:p-12 border border-gray-100"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
               <p className="text-gray-600 mb-8">
@@ -322,7 +322,7 @@ const ContactUs = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-sm hover:shadow-sm transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center">
@@ -344,7 +344,7 @@ const ContactUs = () => {
               className="space-y-8"
             >
               {/* Why Choose Us */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
+              <div className="bg-white rounded-3xl shadow-sm p-8 border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose BKM Global?</h3>
                 <div className="space-y-4">
                   {[
@@ -364,7 +364,7 @@ const ContactUs = () => {
               </div>
 
               {/* Social Media */}
-              <div className="bg-gradient-to-r from-blue-900 to-[#1A3A8D] rounded-3xl shadow-lg p-8 text-white">
+              <div className="bg-gradient-to-r from-blue-900 to-[#1A3A8D] rounded-3xl shadow-sm p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Connect With Us</h3>
                 <p className="mb-6 opacity-90">
                   Follow us on social media for the latest market insights and updates.
@@ -394,7 +394,7 @@ const ContactUs = () => {
               </div>
 
               {/* Quick Response */}
-              <div className="bg-green-50 rounded-3xl shadow-lg p-8 border border-green-100">
+              <div className="bg-green-50 rounded-3xl shadow-sm p-8 border border-green-100">
                 <h3 className="text-2xl font-bold text-green-800 mb-4">Quick Response Guarantee</h3>
                 <p className="text-green-700">
                   We understand that time is crucial in trading. Our team commits to responding to all inquiries within 24 hours, with urgent matters addressed within 2 hours during business hours.

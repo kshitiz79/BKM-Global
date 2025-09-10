@@ -7,7 +7,7 @@ const Banner = () => {
     <div className="relative h-[60vh] w-full overflow">
       <div className="absolute inset-0">
         <Image
-          src="/1.png" // Replace with your image path
+          src="https://assets.upstox.com/content/assets/images/cms/2024426/Trading%203.jpg" // Replace with your image path
           alt="About Us Banner"
           fill
           className="object-cover"

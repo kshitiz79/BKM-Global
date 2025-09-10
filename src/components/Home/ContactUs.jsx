@@ -55,9 +55,16 @@ export default function ContactSection() {
       city: 'Bangalore',
       stateZip: 'Bangalore - 560095, Karnataka, India',
       email: 'support@bkmglobal.in',
-      phone: '+91 9740633154',
+
     },
-   
+    {
+      title: 'Dubai Office',
+      building: 'OPAL TOWER',
+      street: 'No-703, 7th Floor, Burj Khalifa Street',
+      area: 'Business Bay',
+      city: 'Dubai',
+
+    }
   ];
 
   return (
@@ -109,94 +116,93 @@ export default function ContactSection() {
             </form>
           </div>
 
-          {/* Office Section Cards */}
+          {/* Combined Office Section */}
           <div className="lg:col-span-1">
-            <div className="grid grid-cols-1 gap-6">
-              {offices.map((office, index) => (
-                <div key={index} className="max-w-sm w-full bg-white shadow-xl rounded-2xl border border-blue-100 p-6 mx-auto blue-900-text font-sans">
-                  <h2 className="text-lg sm:text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
-                    {office.title}
-                    <span className="absolute right-0 top-0 opacity-10">
-                      <svg width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M10 20h4v10H4V20H8v-6a8 8 0 0116 0v6h4v10H20V20h-4v-6a4 4 0 00-8 0v6z" />
-                      </svg>
-                    </span>
-                  </h2>
-                  <div className="flex items-start bg-blue-50 rounded-lg p-4 mb-4">
-                    <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
-                    <div>
-                      <p className="text-sm">{office.building}</p>
-                      <p className="text-sm">{office.street}</p>
-                      {office.area && <p className="text-sm">{office.area}</p>}
-                      <p className="text-sm font-medium blue-800-text">{office.city}</p>
-                      {office.stateZip && <p className="text-sm font-medium blue-800-text">{office.stateZip}</p>}
-                    </div>
-                  </div>
-                  {office.email && (
-                    <div className="flex items-center mb-3">
-                      <Mail className="w-5 h-5 mr-3 blue-900-text" />
-                      <a href={`mailto:${office.email}`} className="text-sm blue-900-text hover:underline">
-                        {office.email}
-                      </a>
-                    </div>
-                  )}
-                  {office.phone && (
-                    <div className="flex items-center mb-6">
-                      <Phone className="w-5 h-5 mr-3 blue-900-text" />
-                      <a href={`tel:${office.phone}`} className="text-sm blue-900-text hover:underline">
-                        {office.phone}
-                      </a>
-                    </div>
-                  )}
-                  <div className="grid grid-cols-2 gap-3 mt-52">
-                    {office.phone && (
-                      <a
-                        href={`tel:${office.phone.replace(/\D/g, '')}`}
-                        className="btn-blue-900"
-                      >
-                        <Phone className="w-4 h-4" />
-                        Call Now
-                      </a>
-                    )}
-                    {office.email && (
-                      <a
-                        href={`mailto:${office.email}`}
-                        className="flex items-center justify-center gap-2 bg-[#1A3A8D] text-white text-sm font-medium px-4 py-3 rounded-xl hover:bg-blue-600 transition"
-                      >
-                        <MessageSquare className="w-4 h-4" />
-                        Message
-                      </a>
-                    )}
+            <div className="max-w-sm w-full bg-white shadow-xl rounded-2xl border border-blue-100 p-6 mx-auto blue-900-text font-sans">
+              <h2 className="text-lg sm:text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
+                Our Offices
+                <span className="absolute right-0 top-0 opacity-10">
+                  <svg width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M10 20h4v10H4V20H8v-6a8 8 0 0116 0v6h4v10H20V20h-4v-6a4 4 0 00-8 0v6z" />
+                  </svg>
+                </span>
+              </h2>
+              
+              {/* India Office */}
+              <div className="mb-6">
+                <h3 className="text-md font-bold blue-900-text mb-2">India Office</h3>
+                <div className="flex items-start bg-blue-50 rounded-lg p-4 mb-3">
+                  <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
+                  <div>
+                    <p className="text-sm">Cita Building</p>
+                    <p className="text-sm">408, 1st Floor, 1st C Main, Koramangala 7th Block</p>
+                    <p className="text-sm">Bangalore</p>
+                    <p className="text-sm font-medium blue-800-text">Bangalore - 560095, Karnataka, India</p>
                   </div>
                 </div>
-              ))}
+                <div className="flex items-center mb-3">
+                  <Mail className="w-5 h-5 mr-3 blue-900-text" />
+                  <a href="mailto:support@bkmglobal.in" className="text-sm blue-900-text hover:underline">
+                    support@bkmglobal.in
+                  </a>
+                </div>
+                <div className="flex items-center mb-4">
+                  <Phone className="w-5 h-5 mr-3 blue-900-text" />
+                  <a href="tel:+919740633154" className="text-sm blue-900-text hover:underline">
+                    +91 9740633154
+                  </a>
+                </div>
+               
+              </div>
+              
+              {/* Dubai Office */}
+              <div>
+                <h3 className="text-md font-bold blue-900-text mb-2">Dubai Office</h3>
+                <div className="flex items-start bg-blue-50 rounded-lg p-4 mb-4">
+                  <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
+                  <div>
+                    <p className="text-sm">OPAL TOWER</p>
+                    <p className="text-sm">No-703, 7th Floor, Burj Khalifa Street</p>
+                    <p className="text-sm">Business Bay</p>
+                    <p className="text-sm font-medium blue-800-text">Dubai</p>
+                  </div>
+                </div>
+              
+                <a
+                  href="tel:+971568591870"
+                  className="btn-blue-900 w-full"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call Now
+                </a>
+              </div>
             </div>
+            
+            {/* Map Section */}
+            
           </div>
-
-          {/* Map Section */}
-          <div className="bg-white shadow-xl rounded-2xl py-6 sm:py-8 px-6 sm:px-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-            <h3 className="h3-blue-900 mb-4">Find Us Here</h3>
-            <div className="w-full h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden shadow-md relative">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2171775044056!2d77.62264807412218!3d12.935171087379098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1454d1b2b317%3A0xb4e0b61cb7ce1aa7!2s408%2C%20Cita%20Building%2C%201st%20Floor%2C%201st%20C%20Main%2C%207th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095%2C%20India!5e0!3m2!1sen!2sin!4v1720504731390!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 'none' }}
-                allowFullScreen=""
-                loading="lazy"
-                title="Head Office Location"
-              ></iframe>
+          <div className="bg-white shadow-xl rounded-2xl py-6 sm:py-8 px-6 sm:px-8 flex flex-col items-center  transition-transform duration-300 ">
+              <h3 className="h3-blue-900 mb-4">Find Us Here</h3>
+              <div className="w-full h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden shadow-md relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2171775044056!2d77.62264807412218!3d12.935171087379098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1454d1b2b317%3A0xb4e0b61cb7ce1aa7!2s408%2C%20Cita%20Building%2C%201st%20Floor%2C%201st%20C%20Main%2C%207th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095%2C%20India!5e0!3m2!1sen!2sin!4v1720504731390!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="Head Office Location"
+                ></iframe>
+              </div>
+              <p className="text-gray-600 text-sm mt-4 text-center">
+                Visit us at our head office in Koramangala, Bengaluru!
+              </p>
+              <a href="https://www.google.com/maps/place/Cita+building/@12.9350918,77.5716018,13z/data=!4m6!3m5!1s0x3bae15f26ddf5899:0xf1138ec27b8e0c77!8m2!3d12.935095!4d77.6128016!16s%2Fg%2F11t7ky79dg?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D">
+                <button className="mt-4 btn-blue-900">
+                  Get Directions
+                </button>
+              </a>
             </div>
-            <p className="text-gray-600 text-sm mt-4 text-center">
-              Visit us at our head office in Koramangala, Bengaluru!
-            </p>
-            <a href="https://www.google.com/maps/place/Cita+building/@12.9350918,77.5716018,13z/data=!4m6!3m5!1s0x3bae15f26ddf5899:0xf1138ec27b8e0c77!8m2!3d12.935095!4d77.6128016!16s%2Fg%2F11t7ky79dg?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D">
-              <button className="mt-16 btn-blue-900">
-                Get Directions
-              </button>
-            </a>
-          </div>
-
         </div>
       </div>
     </div>
