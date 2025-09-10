@@ -1,4 +1,3 @@
-
 import React from "react";
 import Image from "next/image";
 
@@ -39,16 +38,16 @@ export function Section() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">$2B+</div>
-                <div className="text-sm text-gray-600">Assets Managed</div>
+                <div className="text-2xl font-bold text-blue-600">10M+</div>
+                <div className="text-sm text-gray-600">Assets managed</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">15+</div>
+                <div className="text-2xl font-bold text-blue-600">16+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">500+</div>
-                <div className="text-sm text-gray-600">Happy Clients</div>
+                <div className="text-2xl font-bold text-blue-600">1000+</div>
+                <div className="text-sm text-gray-600">Clients Served</div>
               </div>
             </div>
           </div>

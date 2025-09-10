@@ -47,21 +47,24 @@ export default function ContactSection() {
     }
   };
 
-  const office = {
-    title: 'Our Office Details',
-    building: 'Cita Building',
-    street: '408, 1st Floor, 1st C Main, Koramangala 7th Block',
-    city: 'Bangalore',
-    stateZip: 'Bangalore - 560095, Karnataka, India',
-    email: 'support@bkmglobal.in', // updated email
-    phone1: '+91 9740633154',
-  };
+  const offices = [
+    {
+      title: 'India Office',
+      building: 'Cita Building',
+      street: '408, 1st Floor, 1st C Main, Koramangala 7th Block',
+      city: 'Bangalore',
+      stateZip: 'Bangalore - 560095, Karnataka, India',
+      email: 'support@bkmglobal.in',
+      phone: '+91 9740633154',
+    },
+   
+  ];
 
   return (
     <div className="relative bg-white py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h1 className="h1-blue-900 text-center mb-8 sm:mb-10 md:mb-12">Contact Us</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
 
           {/* Contact Form */}
           <div className="shadow-2xl rounded-2xl py-8 sm:py-10 px-6 sm:px-8 transform hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br from-white to-blue-50">
@@ -106,51 +109,67 @@ export default function ContactSection() {
             </form>
           </div>
 
-          {/* Office Section Card */}
-          <div className="max-w-sm w-full bg-white shadow-xl rounded-2xl border border-blue-100 p-6 mx-auto blue-900-text font-sans">
-            <h2 className="text-lg sm:text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
-              Our Office Details
-              <span className="absolute right-0 top-0 opacity-10">
-                <svg width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M10 20h4v10H4V20H8v-6a8 8 0 0116 0v6h4v10H20V20h-4v-6a4 4 0 00-8 0v6z" />
-                </svg>
-              </span>
-            </h2>
-            <div className="flex items-start bg-blue-50 rounded-lg p-4 mb-4">
-              <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
-              <div>
-                <p className="text-sm">{office.building}</p>
-                <p className="text-sm">{office.street}</p>
-                <p className="text-sm font-medium blue-800-text">{office.stateZip}</p>
-              </div>
-            </div>
-            <div className="flex items-center mb-3">
-              <Mail className="w-5 h-5 mr-3 blue-900-text" />
-              <a href={`mailto:${office.email}`} className="text-sm blue-900-text hover:underline">
-                {office.email}
-              </a>
-            </div>
-            <div className="flex items-center mb-6">
-              <Phone className="w-5 h-5 mr-3 blue-900-text" />
-              <a href={`tel:${office.phone1}`} className="text-sm blue-900-text hover:underline">
-                {office.phone1}
-              </a>
-            </div>
-            <div className="grid grid-cols-2 gap-3 mt-52">
-              <a
-                href={`tel:${office.phone1.replace(/\D/g, '')}`}
-                className="btn-blue-900"
-              >
-                <Phone className="w-4 h-4" />
-                Call Now
-              </a>
-              <a
-                href={`mailto:${office.email}`}
-                className="flex items-center justify-center gap-2 bg-[#1A3A8D] text-white text-sm font-medium px-4 py-3 rounded-xl hover:bg-blue-600 transition"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Message
-              </a>
+          {/* Office Section Cards */}
+          <div className="lg:col-span-1">
+            <div className="grid grid-cols-1 gap-6">
+              {offices.map((office, index) => (
+                <div key={index} className="max-w-sm w-full bg-white shadow-xl rounded-2xl border border-blue-100 p-6 mx-auto blue-900-text font-sans">
+                  <h2 className="text-lg sm:text-xl font-bold uppercase blue-900-text mb-4 border-b pb-2 border-blue-100 relative">
+                    {office.title}
+                    <span className="absolute right-0 top-0 opacity-10">
+                      <svg width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M10 20h4v10H4V20H8v-6a8 8 0 0116 0v6h4v10H20V20h-4v-6a4 4 0 00-8 0v6z" />
+                      </svg>
+                    </span>
+                  </h2>
+                  <div className="flex items-start bg-blue-50 rounded-lg p-4 mb-4">
+                    <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
+                    <div>
+                      <p className="text-sm">{office.building}</p>
+                      <p className="text-sm">{office.street}</p>
+                      {office.area && <p className="text-sm">{office.area}</p>}
+                      <p className="text-sm font-medium blue-800-text">{office.city}</p>
+                      {office.stateZip && <p className="text-sm font-medium blue-800-text">{office.stateZip}</p>}
+                    </div>
+                  </div>
+                  {office.email && (
+                    <div className="flex items-center mb-3">
+                      <Mail className="w-5 h-5 mr-3 blue-900-text" />
+                      <a href={`mailto:${office.email}`} className="text-sm blue-900-text hover:underline">
+                        {office.email}
+                      </a>
+                    </div>
+                  )}
+                  {office.phone && (
+                    <div className="flex items-center mb-6">
+                      <Phone className="w-5 h-5 mr-3 blue-900-text" />
+                      <a href={`tel:${office.phone}`} className="text-sm blue-900-text hover:underline">
+                        {office.phone}
+                      </a>
+                    </div>
+                  )}
+                  <div className="grid grid-cols-2 gap-3 mt-52">
+                    {office.phone && (
+                      <a
+                        href={`tel:${office.phone.replace(/\D/g, '')}`}
+                        className="btn-blue-900"
+                      >
+                        <Phone className="w-4 h-4" />
+                        Call Now
+                      </a>
+                    )}
+                    {office.email && (
+                      <a
+                        href={`mailto:${office.email}`}
+                        className="flex items-center justify-center gap-2 bg-[#1A3A8D] text-white text-sm font-medium px-4 py-3 rounded-xl hover:bg-blue-600 transition"
+                      >
+                        <MessageSquare className="w-4 h-4" />
+                        Message
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

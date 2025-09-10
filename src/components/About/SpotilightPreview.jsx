@@ -38,10 +38,10 @@ export function SpotlightPreview() {
   ];
 
   const stats = [
-    { number: "15+", label: "Years Experience" },
-    { number: "5000+", label: "Clients Served" },
-    { number: "$2B+", label: "Assets Managed" },
-    { number: "95%", label: "Success Rate" }
+    { number: "16+", label: "Years Experience" },
+    { number: "1000+", label: "Clients Served" },
+    { number: "10M+", label: "Assets managed" },
+    { number: "73%", label: "Success Rate" }
   ];
 
   return (

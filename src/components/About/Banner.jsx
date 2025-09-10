@@ -1,4 +1,3 @@
-
 "use client";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -25,7 +24,7 @@ const Banner = () => {
             About Us
           </h1>
           <p className="text-xl md:text-2xl font-light">
-            Transforming Ideas into Digital Reality
+            Informed Trading Decisions brings consistent profit
           </p>
         </div>
       </div>

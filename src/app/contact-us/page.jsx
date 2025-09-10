@@ -65,24 +65,34 @@ const ContactUs = () => {
   const contactInfo = [
     {
       icon: <FaPhone className="w-6 h-6" />,
-      title: "Phone",
-      details: ["+91 9740633154"],
-      action: "tel:+919740633154"
-    },
-    {
-      icon: <FaEnvelope className="w-6 h-6" />,
-      title: "Email",
-      details: ["support@bkmglobal.in"],
-      action: "mailto:support@bkmglobal.in"
+      title: "Contact Info",
+      details: ["+91 9740633154", "+971 568591870", "support@bkmglobal.in"],
+      actions: ["tel:+919740633154", "tel:+971568591870", "mailto:support@bkmglobal.in"],
+      types: ["phone", "phone", "email"]
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      title: "Address",
-      details: [
-        "408, Cita Building, 1st floor, 1st C Main,",
-        "Koramangala 7th Block, Bangalore-560 095,",
-        "Karnataka, India"
-      ]
+      title: "India Office",
+      office: {
+ 
+        building: "Cita Building",
+        street: "408, 1st Floor, 1st C Main, Koramangala 7th Block",
+        city: "Bangalore",
+        stateZip: "Bangalore - 560095, Karnataka, India"
+
+      }
+    },
+    {
+      icon: <FaMapMarkerAlt className="w-6 h-6" />,
+      title: "Dubai Office",
+      office: {
+
+        building: "OPAL TOWER",
+        street: "No-703, 7th Floor, Burj Khalifa Street",
+        area: "Business Bay",
+        city: "Dubai"
+
+      }
     },
     {
       icon: <FaClock className="w-6 h-6" />,
@@ -152,17 +162,43 @@ const ContactUs = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{info.title}</h3>
                 <div className="space-y-1">
-                  {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-600">
-                      {info.action ? (
-                        <a href={info.action} className="hover:text-blue-600 transition-colors duration-300">
-                          {detail}
-                        </a>
-                      ) : (
-                        detail
+                  {info.details ? (
+                    info.details.map((detail, idx) => (
+                      <p key={idx} className="text-gray-600">
+                        {info.action ? (
+                          <a href={info.action} className="hover:text-blue-600 transition-colors duration-300">
+                            {detail}
+                          </a>
+                        ) : info.actions ? (
+                          <a href={info.actions[idx]} className="hover:text-blue-600 transition-colors duration-300">
+                            {detail}
+                          </a>
+                        ) : info.types ? (
+                          <a href={info.types[idx] === 'email' ? `mailto:${detail}` : `tel:${detail.replace(/\D/g, '')}`} className="hover:text-blue-600 transition-colors duration-300">
+                            {detail}
+                          </a>
+                        ) : (
+                          detail
+                        )}
+                      </p>
+                    ))
+                  ) : info.office ? (
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">{info.office.name}</h4>
+                      <p className="text-sm text-gray-600">{info.office.building}</p>
+                      <p className="text-sm text-gray-600">{info.office.street}</p>
+                      {info.office.area && <p className="text-sm text-gray-600">{info.office.area}</p>}
+                      <p className="text-sm font-medium text-gray-900">{info.office.city}</p>
+                      {info.office.stateZip && <p className="text-sm font-medium text-gray-900">{info.office.stateZip}</p>}
+                      {info.office.phone && (
+                        <p className="text-sm mt-1">
+                          <a href={`tel:${info.office.phone}`} className="text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                            {info.office.phone}
+                          </a>
+                        </p>
                       )}
-                    </p>
-                  ))}
+                    </div>
+                  ) : null}
                 </div>
               </motion.div>
             ))}
