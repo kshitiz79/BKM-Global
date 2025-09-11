@@ -410,12 +410,12 @@ const ContactUs = () => {
         <div className=" text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
           <p className="text-gray-600 mb-8">
-            Located in the heart of Bangalore's tech hub, Electronic City Phase 1
+            Located in the heart of Bangalore's tech hub, Koramangala
           </p>
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
             <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62228.30224653803!2d77.63505434042516!3d12.841858899999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6cde204c3f9b%3A0x49cf9469a92db66e!2sElectronic%20City%20Phase%201%2C%20Bengaluru%2C%20Karnataka%20560100%2C%20India!5e0!3m2!1sen!2sin!4v1721643810217!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2171775044056!2d77.62264807412218!3d12.935171087379098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1454d1b2b317%3A0xb4e0b61cb7ce1aa7!2s408%2C%20Cita%20Building%2C%201st%20Floor%2C%201st%20C%20Main%2C%207th%20Block%2C%20Koramangala%2C%20Bengaluru%2C%20Karnataka%20560095%2C%20India!5e0!3m2!1sen!2sin!4v1720504731390!5m2!1sen!2sin"
                 width="100%"
                 height="60%"
                 allowFullScreen=""

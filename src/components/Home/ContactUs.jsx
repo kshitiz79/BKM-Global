@@ -191,6 +191,7 @@ export default function ContactSection() {
                   style={{ border: 'none' }}
                   allowFullScreen=""
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   title="Head Office Location"
                 ></iframe>
               </div>
