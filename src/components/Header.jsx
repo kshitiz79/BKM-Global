@@ -214,7 +214,7 @@ function Navbar({ className }) {
 
   return (
     <div
-      className={`fixed inset-x-0 py-4 w-full mx-auto z-50 shadow dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
+      className={`fixed inset-x-0 py-4 md:py-0 w-full mx-auto z-50 shadow dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-24">
         <div className="logo flex-shrink-0">
@@ -253,19 +253,14 @@ function Navbar({ className }) {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden  flex items-center">
-          <button 
-            className="text-black  dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors" 
+        <div className="lg:hidden flex items-center">
+          <button
+            className="text-black dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
               <AnimatePresence mode="wait">
                 <motion.path
                   key={isMenuOpen ? "close" : "open"}
@@ -273,9 +268,9 @@ function Navbar({ className }) {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth="2" 
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                 />
               </AnimatePresence>
@@ -284,66 +279,84 @@ function Navbar({ className }) {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* ===== Mobile: Left-side Sliding Panel ===== */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-700 overflow-hidden"
-          >
-            <div className="px-4 py-6 space-y-2 max-h-[70vh] overflow-y-auto">
-              <MenuItem item="Home" href="/" isMobile onMobileClick={closeMenu} />
-              <MenuItem item="About" href="/about-page" isMobile onMobileClick={closeMenu} />
-              {/* Services dropdown - no href, just expand/collapse */}
-              <MenuItem item="Services" isMobile isDropdown>
-                <div className="space-y-3">
-                  <ProductItem
-                    title="Investment Management"
-                    href="/services-page/fund-management"
-                    src="/fund-mang.png"
-                    description="Comprehensive Fund Management Solutions"
-                    isMobile
-                    onMobileClick={closeMenu}
-                  />
-                  <ProductItem
-                    title="Market Alerts"
-                    href="/services-page/trading-signals"
-                    src="/trading-signals.png"
-                    description="Comprehensive Market Alerts for Strategic Investment"
-                    isMobile
-                    onMobileClick={closeMenu}
-                  />
-                  <ProductItem
-                    title="Uplearn"
-                    href="/services-page/uplearn"
-                    src="/uplearn.png"
-                    description="Redefining Your Approach to Trading and Investment."
-                    isMobile
-                    onMobileClick={closeMenu}
-                  />
-                </div>
-              </MenuItem>
-              <MenuItem item="Privacy Policy" href="/privacy-policy" isMobile onMobileClick={closeMenu} />
-              <MenuItem item="Contact Us" href="/contact-us" isMobile onMobileClick={closeMenu} />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden fixed inset-0 bg-black/30 z-40"
+              onClick={closeMenu}
+            />
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 bg-black/20 z-40"
-            onClick={closeMenu}
-          />
+            {/* Side panel (from left) */}
+            <motion.aside
+              key="sidepanel"
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="lg:hidden fixed top-0 left-0 h-full w-full sm:w-80 max-w-xs z-50 bg-white dark:bg-black shadow-xl overflow-auto"
+              aria-modal="true"
+              role="dialog"
+            >
+              <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="logo">
+                  <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                </div>
+                <button
+                  onClick={closeMenu}
+                  aria-label="Close menu"
+                  className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <div className="px-4 py-6 space-y-2">
+                <MenuItem item="Home" href="/" isMobile onMobileClick={closeMenu} />
+                <MenuItem item="About" href="/about-page" isMobile onMobileClick={closeMenu} />
+                {/* Services dropdown - no href, just expand/collapse */}
+                <MenuItem item="Services" isMobile isDropdown>
+                  <div className="space-y-3">
+                    <ProductItem
+                      title="Investment Management"
+                      href="/services-page/fund-management"
+                      src="/fund-mang.png"
+                      description="Comprehensive Fund Management Solutions"
+                      isMobile
+                      onMobileClick={closeMenu}
+                    />
+                    <ProductItem
+                      title="Market Alerts"
+                      href="/services-page/trading-signals"
+                      src="/trading-signals.png"
+                      description="Comprehensive Market Alerts for Strategic Investment"
+                      isMobile
+                      onMobileClick={closeMenu}
+                    />
+                    <ProductItem
+                      title="Uplearn"
+                      href="/services-page/uplearn"
+                      src="/uplearn.png"
+                      description="Redefining Your Approach to Trading and Investment."
+                      isMobile
+                      onMobileClick={closeMenu}
+                    />
+                  </div>
+                </MenuItem>
+                <MenuItem item="Privacy Policy" href="/privacy-policy" isMobile onMobileClick={closeMenu} />
+                <MenuItem item="Contact Us" href="/contact-us" isMobile onMobileClick={closeMenu} />
+              </div>
+            </motion.aside>
+          </>
         )}
       </AnimatePresence>
     </div>
