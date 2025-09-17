@@ -15,14 +15,18 @@ const transition = {
   restSpeed: 0.001,
 };
 
-export const MenuItem = ({ setActive, active, item, href = "#", children, isMobile = false, onMobileClick }) => {
+export const MenuItem = ({ setActive, active, item, href = "#", children, isMobile = false, onMobileClick, isDropdown = false }) => {
   const pathname = usePathname();
   const isHome = href === "/";
   const isActive = isHome ? pathname === "/" : pathname.startsWith(href);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleMobileClick = () => {
+  const handleMobileClick = (e) => {
     if (isMobile && children) {
+      // Prevent navigation if this is a dropdown parent
+      if (isDropdown) {
+        e.preventDefault();
+      }
       setIsExpanded(!isExpanded);
     } else if (onMobileClick) {
       onMobileClick();
@@ -54,7 +58,7 @@ export const MenuItem = ({ setActive, active, item, href = "#", children, isMobi
             <motion.div
               transition={transition}
               layoutId="active"
-              className="bg-white dark:bg-black  rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.1] shadow-xl"
+              className="bg-white dark:bg-black rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.1] shadow-xl"
             >
               <motion.div layout className="w-[30rem] h-80 p-4">
                 {children}
@@ -71,18 +75,31 @@ export const MenuItem = ({ setActive, active, item, href = "#", children, isMobi
     <div className="w-full">
       <div 
         className={`flex items-center justify-between w-full py-3 px-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md ${
-          isActive ? "font-semibold text-blue-900 bg-blue-50 dark:bg-blue-900/20" : "text-black dark:text-white"
+          isActive && !isDropdown ? "font-semibold text-blue-900 bg-blue-50 dark:bg-blue-900/20" : "text-black dark:text-white"
         }`}
         onClick={handleMobileClick}
       >
-        <Link href={href} className="flex-1">
-          <span>{item}</span>
-        </Link>
+        {isDropdown ? (
+          // For dropdown items, don't wrap in Link
+          <span className="flex-1">{item}</span>
+        ) : (
+          // For regular items, wrap in Link
+          <Link href={href} className="flex-1" onClick={(e) => {
+            if (children) {
+              e.preventDefault();
+              handleMobileClick(e);
+            } else if (onMobileClick) {
+              onMobileClick();
+            }
+          }}>
+            <span>{item}</span>
+          </Link>
+        )}
         {children && (
           <motion.svg
             animate={{ rotate: isExpanded ? 180 : 0 }}
             transition={{ duration: 0.2 }}
-            className="w-4 h-4 ml-2"
+            className="w-4 h-4 ml-2 flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -132,7 +149,7 @@ export const ProductItem = ({ title, description, href, src, isMobile = false, o
   return (
     <Link 
       href={href} 
-      className={`flex items-start space-x-3 normal-case p-2 hover:bg-white dark:hover:bg-gray-700 rounded-md transition-colors ${
+      className={`flex items-start space-x-3 normal-case p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors ${
         isMobile ? "w-full" : ""
       }`}
       onClick={handleClick}
@@ -197,7 +214,7 @@ function Navbar({ className }) {
 
   return (
     <div
-      className={`fixed inset-x-0 w-full mx-auto z-50 shadow dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
+      className={`fixed inset-x-0 py-4 w-full mx-auto z-50 shadow dark:bg-black dark:border-white/[0.2] bg-white ${className}`}
     >
       <div className="flex items-center justify-between px-4 sm:px-6 lg:px-24">
         <div className="logo flex-shrink-0">
@@ -236,9 +253,9 @@ function Navbar({ className }) {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center">
+        <div className="lg:hidden  flex items-center">
           <button 
-            className="text-black dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors" 
+            className="text-black  dark:text-white p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors" 
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -280,7 +297,8 @@ function Navbar({ className }) {
             <div className="px-4 py-6 space-y-2 max-h-[70vh] overflow-y-auto">
               <MenuItem item="Home" href="/" isMobile onMobileClick={closeMenu} />
               <MenuItem item="About" href="/about-page" isMobile onMobileClick={closeMenu} />
-              <MenuItem item="Services" href="/services-page/fund-management" isMobile>
+              {/* Services dropdown - no href, just expand/collapse */}
+              <MenuItem item="Services" isMobile isDropdown>
                 <div className="space-y-3">
                   <ProductItem
                     title="Investment Management"
@@ -323,7 +341,7 @@ function Navbar({ className }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 bg-black/20  z-40"
+            className="lg:hidden fixed inset-0 bg-black/20 z-40"
             onClick={closeMenu}
           />
         )}
