@@ -76,7 +76,7 @@ const ContactUs = () => {
       office: {
  
         building: "Cita Building",
-        street: "408, 1st Floor, 1st C Main, Koramangala 7th Block",
+        street: "3rd Floor, SJR Primus, 20 Main Road, Koramangala Industrial Layout ",
         city: "Bangalore",
         stateZip: "Bangalore - 560095, Karnataka, India"
 

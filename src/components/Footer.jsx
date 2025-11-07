@@ -103,7 +103,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     className="hover:text-blue-900 transition-colors duration-200"
                   >
-                   Cita Building 408, 1st Floor, 1st C Main, Koramangala 7th Block Bangalore - 560095, Karnataka, India
+                   3rd Floor, SJR Primus, 20 Main Road, Koramangala Industrial Layout Bangalore - 560095, Karnataka, India
                   </a>
                 </p>
               </div>

@@ -135,7 +135,7 @@ export default function ContactSection() {
                   <MapPin className="w-5 h-5 mt-1 mr-3 blue-900-text" />
                   <div>
                     <p className="text-sm">Cita Building</p>
-                    <p className="text-sm">408, 1st Floor, 1st C Main, Koramangala 7th Block</p>
+                    <p className="text-sm">3rd Floor, SJR Primus, 20 Main Road,Koramangala Industrial Layout</p>
                     <p className="text-sm">Bangalore</p>
                     <p className="text-sm font-medium blue-800-text">Bangalore - 560095, Karnataka, India</p>
                   </div>
